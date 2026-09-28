@@ -1,4 +1,5 @@
 /* Responsive SFMC portfolio */
+
 :root {
   --navy: #061b38;
   --ink: #0a2b58;
@@ -292,7 +293,6 @@ svg {
   padding: 20px 0;
 }
 
-
 /* MAIN WINDOW */
 
 .journey-window {
@@ -318,7 +318,6 @@ svg {
     0 35px 80px rgba(0, 0, 0, 0.28),
     inset 0 1px 0 rgba(255, 255, 255, 0.04);
 }
-
 
 /* HEADER */
 
@@ -414,7 +413,6 @@ svg {
 
   animation: statusPulse 2s ease-in-out infinite;
 }
-
 
 /* =========================================
    JOURNEY FLOW
@@ -531,7 +529,6 @@ svg {
   font-size: 8px;
 }
 
-
 /* Featured Journey Builder */
 
 .featured-node .node-icon {
@@ -550,7 +547,6 @@ svg {
 
   animation: journeyPulse 2.5s ease-out infinite;
 }
-
 
 /* CONNECTORS */
 
@@ -593,7 +589,6 @@ svg {
   animation:
     journeyDataMove 2.4s linear infinite;
 }
-
 
 /* =========================================
    CODE / DATA PANEL
@@ -650,7 +645,6 @@ svg {
     0 0 8px rgba(54, 207, 255, 0.7);
 }
 
-
 /* TABS */
 
 .code-tabs {
@@ -696,7 +690,6 @@ svg {
       rgba(38, 198, 255, 0.3),
       rgba(8, 123, 232, 0.3));
 }
-
 
 /* CODE */
 
@@ -756,7 +749,6 @@ svg {
   color: #64e0d0;
 }
 
-
 /* =========================================
    FOOTER
 ========================================= */
@@ -809,11 +801,9 @@ svg {
   font-size: 8px;
 }
 
-
 /* =========================================
    ANIMATIONS
 ========================================= */
-
 
 @keyframes statusPulse {
 
@@ -829,7 +819,6 @@ svg {
   }
 }
 
-
 @keyframes journeyPulse {
 
   0% {
@@ -843,7 +832,6 @@ svg {
   }
 }
 
-
 @keyframes journeyDataMove {
 
   from {
@@ -854,7 +842,6 @@ svg {
     left: calc(100% - 6px);
   }
 }
-
 
 @keyframes codeAppear {
 
@@ -869,399 +856,9 @@ svg {
   }
 }
 
-
-/* =========================================
-   RESPONSIVE
-========================================= */
-
-@media (max-width: 1100px) {
-
-  .journey-window {
-    max-width: 600px;
-  }
-
-  .journey-flow {
-    padding-left: 12px;
-    padding-right: 12px;
-  }
-
-  .journey-node {
-    width: 78px;
-  }
-
-  .journey-connector {
-    width: 22px;
-  }
-}
-
-
-@media (max-width: 760px) {
-
-  .hero-visual {
-    margin-top: 35px;
-  }
-
-  .journey-window {
-    width: 100%;
-
-    border-radius: 20px;
-  }
-
-  .node-icon {
-    width: 39px;
-    height: 39px;
-
-    border-radius: 11px;
-
-    font-size: 12px;
-  }
-
-  .node-copy strong {
-    font-size: 8px;
-
-    white-space: normal;
-  }
-
-  .node-copy span {
-    font-size: 7px;
-  }
-
-}
-
-
-@media (max-width: 480px) {
-
-  .journey-window-header {
-    padding:
-      16px 15px;
-  }
-
-  .sf-cloud {
-    width: 34px;
-    height: 34px;
-  }
-
-  .window-title strong {
-    font-size: 11px;
-  }
-
-  .window-status {
-    padding:
-      5px 8px;
-
-    font-size: 7px;
-  }
-
-  .journey-flow {
-    grid-template-columns:
-      repeat(3, 1fr);
-
-    row-gap: 22px;
-  }
-
-  .journey-node {
-    min-width: 0;
-  }
-
-  .journey-node:nth-of-type(7),
-  .journey-node:nth-of-type(9) {
-    grid-column: auto;
-  }
-
-  .data-layer-head {
-    align-items: flex-start;
-    gap: 10px;
-
-    flex-direction: column;
-  }
-
-  .code-tabs {
-    width: 100%;
-  }
-
-  .code-tab {
-    flex: 1;
-  }
-
-  /* =========================================
-   DATA 360 → ACTIVATION → MARKETING CLOUD
-   CSS ONLY - HTML UNCHANGED
-========================================= */
-
-.data-flow {
-  display: grid;
-  grid-template-columns:
-    minmax(120px, 1fr)
-    105px
-    minmax(120px, 1fr);
-
-  align-items: center;
-  gap: 14px;
-
-  width: 100%;
-}
-
-
-/* =========================================
-   LEFT + RIGHT SIDE
-========================================= */
-
-.data-flow-side {
-  min-width: 0;
-
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-
-  text-align: center;
-}
-
-
-/* =========================================
-   TOP LABEL
-========================================= */
-
-.data-flow-label {
-  width: 100%;
-
-  margin-bottom: 13px;
-
-  color: #58b9ef;
-
-  font-size: 8px;
-  font-weight: 700;
-
-  line-height: 1.2;
-
-  letter-spacing: 0.13em;
-  text-transform: uppercase;
-
-  text-align: center;
-}
-
-
-/* =========================================
-   DOT + CONTENT
-
-   This changes the existing horizontal
-   dot/text arrangement into vertical.
-========================================= */
-
-.data-flow-content {
-  display: flex;
-  flex-direction: column;
-
-  align-items: center;
-  justify-content: flex-start;
-
-  gap: 8px;
-
-  width: 100%;
-
-  text-align: center;
-}
-
-
-/* Override any previous right-side row reversal */
-
-.data-flow-side.right .data-flow-content {
-  flex-direction: column;
-}
-
-
-/* =========================================
-   DOT
-========================================= */
-
-.data-flow-dot {
-  display: block;
-
-  flex: none;
-
-  width: 12px;
-  height: 12px;
-
-  margin: 0 0 2px;
-
-  border-radius: 50%;
-
-  background: #32cdf5;
-
-  box-shadow:
-    0 0 8px rgba(50, 205, 245, 0.75),
-    0 0 17px rgba(50, 205, 245, 0.30);
-}
-
-
-/* Data 360 dot */
-
-.data-flow-side.left .data-flow-dot {
-  background: #7862ff;
-
-  box-shadow:
-    0 0 8px rgba(120, 98, 255, 0.75),
-    0 0 17px rgba(120, 98, 255, 0.30);
-}
-
-
-/* =========================================
-   SIDE TEXT
-========================================= */
-
-.data-flow-copy {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-
-  min-width: 0;
-
-  text-align: center;
-}
-
-
-.data-flow-copy strong {
-  display: block;
-
-  margin: 0;
-
-  color: #ffffff;
-
-  font-size: 12px;
-  font-weight: 700;
-
-  line-height: 1.3;
-
-  white-space: nowrap;
-}
-
-
-.data-flow-copy span {
-  display: block;
-
-  margin-top: 5px;
-
-  color: #62a8d5;
-
-  font-size: 9px;
-  font-weight: 400;
-
-  line-height: 1.55;
-}
-
-
-/* =========================================
-   CENTER ACTIVATION
-========================================= */
-
-.data-flow-center {
-  align-self: center;
-
-  width: 100%;
-
-  text-align: center;
-}
-
-
-.activation-line {
-  width: 72px;
-  max-width: 100%;
-
-  height: 2px;
-
-  margin:
-    0 auto
-    8px;
-
-  border-radius: 10px;
-
-  background:
-    linear-gradient(
-      90deg,
-      #4055a5,
-      #1689af
-    );
-}
-
-
-.data-flow-center span {
-  display: block;
-
-  color: #5db9ed;
-
-  font-size: 7px;
-  font-weight: 700;
-
-  line-height: 1;
-
-  letter-spacing: 0.09em;
-
-  text-transform: uppercase;
-
-  white-space: nowrap;
-}
-
-
 /* =========================================
    TABLET / SMALL CARD
 ========================================= */
-
-@media (max-width: 700px) {
-
-  .data-flow {
-    grid-template-columns:
-      minmax(95px, 1fr)
-      75px
-      minmax(95px, 1fr);
-
-    gap: 8px;
-  }
-
-
-  .data-flow-label {
-    margin-bottom: 11px;
-
-    font-size: 7px;
-    letter-spacing: 0.10em;
-  }
-
-
-  .data-flow-dot {
-    width: 10px;
-    height: 10px;
-  }
-
-
-  .data-flow-content {
-    gap: 7px;
-  }
-
-
-  .data-flow-copy strong {
-    font-size: 10px;
-  }
-
-
-  .data-flow-copy span {
-    margin-top: 4px;
-
-    font-size: 8px;
-    line-height: 1.45;
-  }
-
-
-  .activation-line {
-    width: 55px;
-
-    margin-bottom: 7px;
-  }
-
-
-  .data-flow-center span {
-    font-size: 6px;
-  }
-
-}
-
 
 /* =========================================
    VERY SMALL MOBILE
@@ -1270,80 +867,7 @@ svg {
    LEFT → ACTIVATION → RIGHT
 ========================================= */
 
-@media (max-width: 420px) {
-
-  .data-flow {
-    grid-template-columns:
-      minmax(78px, 1fr)
-      50px
-      minmax(78px, 1fr);
-
-    gap: 4px;
-  }
-
-
-  .data-flow-label {
-    margin-bottom: 9px;
-
-    font-size: 6px;
-    letter-spacing: 0.07em;
-  }
-
-
-  .data-flow-content {
-    gap: 6px;
-  }
-
-
-  .data-flow-dot {
-    width: 9px;
-    height: 9px;
-  }
-
-
-  .data-flow-copy strong {
-    font-size: 9px;
-
-    white-space: normal;
-  }
-
-
-  .data-flow-copy span {
-    font-size: 7px;
-    line-height: 1.4;
-  }
-
-
-  .activation-line {
-    width: 38px;
-    height: 2px;
-
-    margin-bottom: 6px;
-  }
-
-
-  .data-flow-center span {
-    font-size: 5.5px;
-
-    letter-spacing: 0.04em;
-  }
-
-
-}
-
-
 /* Accessibility */
-
-@media (prefers-reduced-motion: reduce) {
-
-  .journey-window,
-  .window-status span,
-  .pulse-dot,
-  .featured-node .node-icon::after,
-  .journey-connector span {
-    animation: none;
-  }
-}
 
 .hand-note {
   display: inline-block;
@@ -1382,7 +906,6 @@ svg {
     #f7fbff;
 }
 
-
 /* =========================================
    HEADER
 ========================================= */
@@ -1397,11 +920,9 @@ svg {
   margin-bottom: 42px;
 }
 
-
 .testimonial-header>div:first-child {
   max-width: 720px;
 }
-
 
 .testimonial-header h2 {
   margin:
@@ -1415,7 +936,6 @@ svg {
   letter-spacing: -0.04em;
 }
 
-
 .testimonial-header p {
   margin: 0;
 
@@ -1426,7 +946,6 @@ svg {
   font-size: 14px;
   line-height: 1.75;
 }
-
 
 /* =========================================
    CONTROLS
@@ -1439,7 +958,6 @@ svg {
 
   flex: 0 0 auto;
 }
-
 
 .testimonial-arrow {
   width: 43px;
@@ -1470,7 +988,6 @@ svg {
     box-shadow 0.25s ease;
 }
 
-
 .testimonial-arrow:hover {
   transform: translateY(-3px);
 
@@ -1487,7 +1004,6 @@ svg {
     0 12px 25px rgba(13, 135, 213, 0.22);
 }
 
-
 /* =========================================
    CAROUSEL
 ========================================= */
@@ -1502,7 +1018,6 @@ svg {
     8px 3px 18px;
 }
 
-
 .testimonial-track {
   display: flex;
 
@@ -1513,7 +1028,6 @@ svg {
 
   will-change: transform;
 }
-
 
 /* =========================================
    CARD
@@ -1554,7 +1068,6 @@ svg {
     box-shadow 0.35s ease;
 }
 
-
 /* top accent */
 
 .testimonial-card::before {
@@ -1581,7 +1094,6 @@ svg {
     width 0.35s ease;
 }
 
-
 /* subtle glow */
 
 .testimonial-card::after {
@@ -1605,7 +1117,6 @@ svg {
   pointer-events: none;
 }
 
-
 .testimonial-card:hover {
   transform: translateY(-6px);
 
@@ -1615,11 +1126,9 @@ svg {
     0 23px 48px rgba(18, 72, 110, 0.11);
 }
 
-
 .testimonial-card:hover::before {
   width: 95px;
 }
-
 
 /* =========================================
    CARD TOP
@@ -1634,7 +1143,6 @@ svg {
 
   gap: 9px;
 }
-
 
 .testimonial-industry-icon {
   width: 34px;
@@ -1656,7 +1164,6 @@ svg {
   font-weight: 800;
 }
 
-
 .testimonial-industry {
   color: #58758e;
 
@@ -1667,7 +1174,6 @@ svg {
 
   letter-spacing: 0.09em;
 }
-
 
 /* =========================================
    QUOTE
@@ -1691,7 +1197,6 @@ svg {
   opacity: 0.55;
 }
 
-
 .testimonial-text {
   position: relative;
   z-index: 2;
@@ -1704,7 +1209,6 @@ svg {
   font-size: 12.5px;
   line-height: 1.8;
 }
-
 
 /* =========================================
    CLIENT
@@ -1726,7 +1230,6 @@ svg {
   border-top:
     1px solid #e9f1f7;
 }
-
 
 .testimonial-avatar {
   width: 39px;
@@ -1755,19 +1258,16 @@ svg {
     0 8px 18px rgba(35, 146, 218, 0.18);
 }
 
-
 .testimonial-person>div:last-child {
   display: flex;
   flex-direction: column;
 }
-
 
 .testimonial-person strong {
   color: #173e63;
 
   font-size: 10px;
 }
-
 
 .testimonial-person span {
   margin-top: 3px;
@@ -1776,7 +1276,6 @@ svg {
 
   font-size: 8px;
 }
-
 
 /* =========================================
    BOTTOM / DOTS
@@ -1790,7 +1289,6 @@ svg {
   margin-top: 18px;
 }
 
-
 .testimonial-dots {
   display: flex;
   align-items: center;
@@ -1800,7 +1298,6 @@ svg {
 
   min-height: 18px;
 }
-
 
 .testimonial-dot {
   width: 7px;
@@ -1820,7 +1317,6 @@ svg {
     background 0.3s ease;
 }
 
-
 .testimonial-dot.active {
   width: 24px;
 
@@ -1829,7 +1325,6 @@ svg {
       #24bff1,
       #5c63e6);
 }
-
 
 .testimonial-note {
   margin:
@@ -1843,86 +1338,17 @@ svg {
   text-align: center;
 }
 
-
 /* =========================================
    TABLET
 ========================================= */
-
-@media (max-width: 950px) {
-
-  .testimonial-card {
-    flex:
-      0 0 calc((100% - 18px) / 2);
-  }
-
-}
-
 
 /* =========================================
    MOBILE
 ========================================= */
 
-@media (max-width: 650px) {
-
-  .testimonial-header {
-    align-items: flex-start;
-
-    margin-bottom: 30px;
-  }
-
-
-  .testimonial-header p {
-    font-size: 13px;
-  }
-
-
-  .testimonial-controls {
-    display: none;
-  }
-
-
-  .testimonial-card {
-    flex: 0 0 100%;
-
-    min-height: 335px;
-
-    padding: 24px 21px;
-
-    border-radius: 19px;
-  }
-
-
-  .testimonial-card::before {
-    left: 21px;
-  }
-
-
-  .testimonial-text {
-    font-size: 12px;
-  }
-
-
-  .testimonial-carousel {
-    touch-action: pan-y;
-  }
-
-}
-
-
 /* =========================================
    REDUCED MOTION
 ========================================= */
-
-@media (prefers-reduced-motion: reduce) {
-
-  .testimonial-track,
-  .testimonial-card,
-  .testimonial-arrow,
-  .testimonial-dot {
-    transition: none;
-  }
-
-}
 
 .visual-note {
   position: absolute;
@@ -2082,7 +1508,6 @@ svg {
   align-items: center;
 }
 
-
 /* MAIN CARD */
 
 .customer-flow-card {
@@ -2121,7 +1546,6 @@ svg {
     inset 0 1px 0 rgba(255, 255, 255, 0.05);
 }
 
-
 /* =========================================
    HEADER
 ========================================= */
@@ -2139,14 +1563,12 @@ svg {
     1px solid rgba(255, 255, 255, 0.06);
 }
 
-
 .customer-flow-title {
   display: flex;
   align-items: center;
 
   gap: 11px;
 }
-
 
 .flow-cloud {
   width: 38px;
@@ -2170,12 +1592,10 @@ svg {
     0 8px 20px rgba(31, 177, 255, 0.22);
 }
 
-
 .customer-flow-title>div {
   display: flex;
   flex-direction: column;
 }
-
 
 .customer-flow-title strong {
   color: #ffffff;
@@ -2183,7 +1603,6 @@ svg {
   font-size: 13px;
   font-weight: 700;
 }
-
 
 .customer-flow-title small {
   margin-top: 2px;
@@ -2195,7 +1614,6 @@ svg {
   text-transform: uppercase;
   letter-spacing: 0.08em;
 }
-
 
 /* CONNECTED BADGE */
 
@@ -2224,7 +1642,6 @@ svg {
   letter-spacing: 0.08em;
 }
 
-
 .flow-live span {
   width: 6px;
   height: 6px;
@@ -2240,7 +1657,6 @@ svg {
     aboutStatusPulse 2s ease-in-out infinite;
 }
 
-
 /* =========================================
    CUSTOMER FLOW
 ========================================= */
@@ -2254,7 +1670,6 @@ svg {
     36px 18px 30px;
 }
 
-
 .customer-flow-step {
   position: relative;
   z-index: 2;
@@ -2267,7 +1682,6 @@ svg {
 
   text-align: center;
 }
-
 
 .flow-node {
   width: 46px;
@@ -2288,7 +1702,6 @@ svg {
     box-shadow 0.3s ease;
 }
 
-
 .customer-flow-step:hover .flow-node {
   transform:
     translateY(-5px) scale(1.05);
@@ -2297,12 +1710,10 @@ svg {
     0 15px 30px rgba(0, 0, 0, 0.26);
 }
 
-
 .flow-node-icon {
   font-size: 14px;
   font-weight: 800;
 }
-
 
 /* NODE COLORS */
 
@@ -2313,7 +1724,6 @@ svg {
       #0879e8);
 }
 
-
 .unify-node {
   position: relative;
 
@@ -2322,7 +1732,6 @@ svg {
       #755eff,
       #5040d8);
 }
-
 
 .unify-node::after {
   content: "";
@@ -2340,14 +1749,12 @@ svg {
     aboutNodePulse 2.6s ease-out infinite;
 }
 
-
 .segment-node {
   background:
     linear-gradient(135deg,
       #9a65ff,
       #7140dc);
 }
-
 
 .personalize-node {
   background:
@@ -2356,14 +1763,12 @@ svg {
       #8244e9);
 }
 
-
 .engage-node {
   background:
     linear-gradient(135deg,
       #38d6ae,
       #109c82);
 }
-
 
 /* NODE COPY */
 
@@ -2374,14 +1779,12 @@ svg {
   flex-direction: column;
 }
 
-
 .flow-node-copy strong {
   color: #f4f9fd;
 
   font-size: 10px;
   font-weight: 700;
 }
-
 
 .flow-node-copy span {
   margin-top: 2px;
@@ -2390,7 +1793,6 @@ svg {
 
   font-size: 8px;
 }
-
 
 /* =========================================
    FLOW CONNECTOR
@@ -2410,7 +1812,6 @@ svg {
   background:
     rgba(78, 177, 231, 0.18);
 }
-
 
 .flow-line span {
   position: absolute;
@@ -2432,7 +1833,6 @@ svg {
     aboutDataTravel 2.5s linear infinite;
 }
 
-
 /* Different timing creates flowing data effect */
 
 .flow-line:nth-of-type(2) span {
@@ -2450,7 +1850,6 @@ svg {
 .flow-line:nth-of-type(8) span {
   animation-delay: 1s;
 }
-
 
 /* =========================================
    DATA 360 → SFMC BRIDGE
@@ -2480,7 +1879,6 @@ svg {
     rgba(2, 17, 35, 0.68);
 }
 
-
 .platform-label {
   display: block;
 
@@ -2495,14 +1893,12 @@ svg {
   letter-spacing: 0.11em;
 }
 
-
 .platform-name {
   display: flex;
   align-items: center;
 
   gap: 10px;
 }
-
 
 .platform-dot {
   width: 11px;
@@ -2513,14 +1909,12 @@ svg {
   border-radius: 50%;
 }
 
-
 .data-dot {
   background: #745dff;
 
   box-shadow:
     0 0 12px rgba(116, 93, 255, 0.7);
 }
-
 
 .sfmc-dot {
   background: #20c8f7;
@@ -2529,19 +1923,16 @@ svg {
     0 0 12px rgba(32, 200, 247, 0.7);
 }
 
-
 .platform-name div {
   display: flex;
   flex-direction: column;
 }
-
 
 .platform-name strong {
   color: #ffffff;
 
   font-size: 10px;
 }
-
 
 .platform-name small {
   margin-top: 2px;
@@ -2551,21 +1942,17 @@ svg {
   font-size: 8px;
 }
 
-
 .platform-side-right {
   text-align: right;
 }
-
 
 .platform-side-right .platform-name {
   justify-content: flex-end;
 }
 
-
 .platform-side-right .platform-name div {
   align-items: flex-end;
 }
-
 
 /* BRIDGE */
 
@@ -2576,7 +1963,6 @@ svg {
 
   gap: 7px;
 }
-
 
 .bridge-line {
   position: relative;
@@ -2592,7 +1978,6 @@ svg {
       rgba(64, 210, 255, 0.65),
       rgba(32, 200, 247, 0.3));
 }
-
 
 .bridge-pulse {
   position: absolute;
@@ -2614,7 +1999,6 @@ svg {
     bridgeMove 2.4s ease-in-out infinite;
 }
 
-
 .bridge-middle small {
   color: #75a3c5;
 
@@ -2624,7 +2008,6 @@ svg {
   text-transform: uppercase;
   letter-spacing: 0.08em;
 }
-
 
 /* =========================================
    FOOTER
@@ -2645,7 +2028,6 @@ svg {
     rgba(2, 16, 33, 0.38);
 }
 
-
 .flow-status {
   display: flex;
   align-items: center;
@@ -2660,7 +2042,6 @@ svg {
   text-transform: uppercase;
   letter-spacing: 0.07em;
 }
-
 
 .flow-status span {
   width: 6px;
@@ -2677,13 +2058,11 @@ svg {
     aboutStatusPulse 2s ease-in-out infinite;
 }
 
-
 .flow-result {
   color: #527b9d;
 
   font-size: 8px;
 }
-
 
 /* =========================================
    HAND NOTE
@@ -2697,7 +2076,6 @@ svg {
   text-align: center;
 
 }
-
 
 .about-hand-note::after {
   content: "";
@@ -2723,7 +2101,6 @@ svg {
     aboutNoteLine 3.6s ease-in-out infinite;
 }
 
-
 /* =========================================
    ANIMATIONS
 ========================================= */
@@ -2742,7 +2119,6 @@ svg {
   }
 }
 
-
 @keyframes aboutNodePulse {
 
   0% {
@@ -2756,7 +2132,6 @@ svg {
   }
 }
 
-
 @keyframes aboutDataTravel {
 
   from {
@@ -2767,7 +2142,6 @@ svg {
     left: 100%;
   }
 }
-
 
 @keyframes bridgeMove {
 
@@ -2783,7 +2157,6 @@ svg {
     left: -8px;
   }
 }
-
 
 @keyframes aboutNoteFloat {
 
@@ -2806,7 +2179,6 @@ svg {
   }
 }
 
-
 @keyframes aboutNoteLine {
 
   0%,
@@ -2821,88 +2193,11 @@ svg {
   }
 }
 
-
 /* =========================================
    RESPONSIVE
 ========================================= */
 
-@media (max-width: 950px) {
-
-  .about-visual {
-    margin-top: 15px;
-  }
-
-  .customer-flow-card {
-    max-width: 650px;
-  }
-}
-
-
-@media (max-width: 650px) {
-
-  .customer-flow-header {
-    padding:
-      16px 15px;
-  }
-
-  .flow-node {
-    width: 39px;
-    height: 39px;
-
-    border-radius: 11px;
-  }
-
-  .flow-node-copy strong {
-    font-size: 8px;
-  }
-
-  .flow-node-copy span {
-    font-size: 7px;
-  }
-
-}
-
-
-@media (max-width: 450px) {
-
-  .customer-flow {
-    grid-template-columns:
-      repeat(3, 1fr);
-
-    row-gap: 22px;
-  }
-
-  .flow-live {
-    padding:
-      5px 7px;
-
-    font-size: 6px;
-  }
-
-  .customer-flow-title strong {
-    font-size: 11px;
-  }
-
-  .customer-flow-title small {
-    font-size: 7px;
-  }
-}
-
-
 /* ACCESSIBILITY */
-
-@media (prefers-reduced-motion: reduce) {
-
-  .flow-live span,
-  .flow-status span,
-  .unify-node::after,
-  .flow-line span,
-  .bridge-pulse,
-  .about-hand-note,
-  .about-hand-note::after {
-    animation: none;
-  }
-}
 
 .section-head {
   display: flex;
@@ -2977,7 +2272,6 @@ svg {
     #f7fbff;
 }
 
-
 /* =========================================
    SERVICES GRID
 ========================================= */
@@ -2990,7 +2284,6 @@ svg {
 
   margin-top: 42px;
 }
-
 
 /* =========================================
    SERVICE CARD
@@ -3026,7 +2319,6 @@ svg {
     border-color 0.35s ease;
 }
 
-
 /* subtle background glow */
 
 .service-card::before {
@@ -3054,7 +2346,6 @@ svg {
     opacity 0.45s ease;
 }
 
-
 /* top accent line */
 
 .service-card::after {
@@ -3079,7 +2370,6 @@ svg {
     width 0.4s ease;
 }
 
-
 .service-card:hover {
   transform: translateY(-7px);
 
@@ -3089,16 +2379,13 @@ svg {
     0 24px 50px rgba(18, 72, 110, 0.12);
 }
 
-
 .service-card:hover::before {
   transform: scale(1.2);
 }
 
-
 .service-card:hover::after {
   width: 85px;
 }
-
 
 /* =========================================
    CARD TOP / ICON
@@ -3114,7 +2401,6 @@ svg {
 
   margin-bottom: 24px;
 }
-
 
 .service-icon {
   width: 52px;
@@ -3140,7 +2426,6 @@ svg {
     box-shadow 0.35s ease;
 }
 
-
 .service-icon span {
   display: grid;
   place-items: center;
@@ -3151,7 +2436,6 @@ svg {
   line-height: 1;
 }
 
-
 .service-card:hover .service-icon {
   transform:
     translateY(-3px) rotate(-3deg) scale(1.05);
@@ -3159,7 +2443,6 @@ svg {
   box-shadow:
     0 14px 28px rgba(19, 141, 225, 0.28);
 }
-
 
 /* =========================================
    INDIVIDUAL ICON STYLES
@@ -3177,7 +2460,6 @@ svg {
     0 10px 22px rgba(255, 133, 44, 0.2);
 }
 
-
 /* Automation Studio */
 
 .automation-icon {
@@ -3189,7 +2471,6 @@ svg {
   box-shadow:
     0 10px 22px rgba(27, 180, 143, 0.2);
 }
-
 
 /* Personalization */
 
@@ -3203,7 +2484,6 @@ svg {
     0 10px 22px rgba(112, 76, 222, 0.2);
 }
 
-
 /* CloudPages */
 
 .cloudpage-icon {
@@ -3215,7 +2495,6 @@ svg {
   box-shadow:
     0 10px 22px rgba(145, 71, 224, 0.2);
 }
-
 
 /* API / Integration */
 
@@ -3229,7 +2508,6 @@ svg {
     0 10px 22px rgba(17, 118, 216, 0.2);
 }
 
-
 /* Administration */
 
 .admin-icon {
@@ -3241,7 +2519,6 @@ svg {
   box-shadow:
     0 10px 22px rgba(20, 154, 157, 0.2);
 }
-
 
 /* Data 360 */
 
@@ -3256,7 +2533,6 @@ svg {
   box-shadow:
     0 10px 24px rgba(100, 78, 224, 0.25);
 }
-
 
 .data360-icon::after {
   content: "";
@@ -3273,7 +2549,6 @@ svg {
   animation:
     serviceDataPulse 2.8s ease-out infinite;
 }
-
 
 /* =========================================
    CARD CONTENT
@@ -3296,7 +2571,6 @@ svg {
   letter-spacing: -0.025em;
 }
 
-
 .service-card>p {
   position: relative;
   z-index: 2;
@@ -3309,7 +2583,6 @@ svg {
   font-size: 13.5px;
   line-height: 1.75;
 }
-
 
 /* =========================================
    TAGS
@@ -3327,7 +2600,6 @@ svg {
   margin-top: auto;
   padding-top: 24px;
 }
-
 
 .service-tags span {
   display: inline-flex;
@@ -3358,13 +2630,11 @@ svg {
     transform 0.25s ease;
 }
 
-
 .service-card:hover .service-tags span {
   border-color: #c7e4f6;
 
   background: #f1f9ff;
 }
-
 
 .service-tags span:hover {
   transform: translateY(-2px);
@@ -3373,7 +2643,6 @@ svg {
 
   border-color: #9ed8f6;
 }
-
 
 /* =========================================
    DATA 360 CARD
@@ -3392,7 +2661,6 @@ svg {
       #faf9ff);
 }
 
-
 .data360-service-card::before {
   background:
     radial-gradient(circle,
@@ -3400,14 +2668,12 @@ svg {
       transparent 68%);
 }
 
-
 .data360-service-card::after {
   background:
     linear-gradient(90deg,
       #7560ff,
       #29bfff);
 }
-
 
 .data360-service-card:hover {
   border-color:
@@ -3417,7 +2683,6 @@ svg {
     0 24px 52px rgba(87, 69, 188, 0.12);
 }
 
-
 /* DATA 360 BADGE */
 
 .service-card-meta {
@@ -3426,7 +2691,6 @@ svg {
 
   gap: 8px;
 }
-
 
 .data360-badge {
   display: inline-flex;
@@ -3453,7 +2717,6 @@ svg {
   text-transform: uppercase;
 }
 
-
 /* =========================================
    ANIMATION
 ========================================= */
@@ -3471,149 +2734,21 @@ svg {
   }
 }
 
-
 /* =========================================
    TABLET
 ========================================= */
-
-@media (max-width: 950px) {
-
-  .services-grid {
-    grid-template-columns:
-      repeat(2, minmax(0, 1fr));
-
-    gap: 16px;
-  }
-
-
-  .service-card {
-    min-height: 315px;
-
-    padding: 26px;
-  }
-
-
-  .service-card h3 {
-    font-size: 18px;
-  }
-}
-
 
 /* =========================================
    MOBILE
 ========================================= */
 
-@media (max-width: 650px) {
-
-  .services-grid {
-    grid-template-columns: 1fr;
-
-    gap: 14px;
-
-    margin-top: 32px;
-  }
-
-
-  .service-card {
-    min-height: auto;
-
-    padding:
-      25px 22px;
-
-    border-radius: 19px;
-  }
-
-
-  .service-card-top {
-    margin-bottom: 20px;
-  }
-
-
-  .service-icon {
-    width: 47px;
-    height: 47px;
-
-    border-radius: 13px;
-  }
-
-
-  .service-card h3 {
-    font-size: 18px;
-  }
-
-
-  .service-card>p {
-    font-size: 13px;
-    line-height: 1.7;
-  }
-
-
-  .service-tags {
-    margin-top: 20px;
-    padding-top: 0;
-  }
-
-
-  .service-tags span {
-    padding:
-      5px 9px;
-
-    font-size: 8px;
-  }
-
-
-  .service-card::after {
-    left: 22px;
-  }
-}
-
-
 /* =========================================
    SMALL MOBILE
 ========================================= */
 
-@media (max-width: 420px) {
-
-  .service-card {
-    padding:
-      23px 19px;
-  }
-
-
-  .service-card h3 {
-    font-size: 17px;
-  }
-
-
-  .service-card>p {
-    font-size: 12.5px;
-  }
-
-
-  .data360-badge {
-    font-size: 7px;
-
-    padding:
-      5px 8px;
-  }
-}
-
-
 /* =========================================
    REDUCED MOTION
 ========================================= */
-
-@media (prefers-reduced-motion: reduce) {
-
-  .service-card,
-  .service-icon,
-  .service-tags span,
-  .data360-icon::after {
-    transition: none;
-    animation: none;
-  }
-
-}
 
 .experience-layout {
   display: grid;
@@ -3686,7 +2821,6 @@ svg {
     border-color 0.35s ease;
 }
 
-
 .impact-card:hover {
   transform: translateY(-5px);
 
@@ -3695,7 +2829,6 @@ svg {
   box-shadow:
     0 30px 65px rgba(18, 72, 110, 0.13);
 }
-
 
 /* subtle top accent */
 
@@ -3719,7 +2852,6 @@ svg {
       #7560ff);
 }
 
-
 /* =========================================
    HEADING
 ========================================= */
@@ -3727,7 +2859,6 @@ svg {
 .impact-heading {
   margin-bottom: 35px;
 }
-
 
 .impact-heading span {
   display: block;
@@ -3742,7 +2873,6 @@ svg {
   text-transform: uppercase;
 }
 
-
 .impact-heading h3 {
   margin: 5px 0 0;
 
@@ -3755,7 +2885,6 @@ svg {
 
   letter-spacing: -0.04em;
 }
-
 
 /* =========================================
    PROCESS TRACK
@@ -3772,7 +2901,6 @@ svg {
   margin-bottom: 34px;
 }
 
-
 .impact-step {
   position: relative;
   z-index: 2;
@@ -3785,7 +2913,6 @@ svg {
 
   text-align: center;
 }
-
 
 /* numbered circle */
 
@@ -3821,7 +2948,6 @@ svg {
     box-shadow 0.3s ease;
 }
 
-
 /* hover */
 
 .impact-step:hover b {
@@ -3839,7 +2965,6 @@ svg {
     0 12px 24px rgba(15, 139, 218, 0.24);
 }
 
-
 /* stage */
 
 .impact-step>span {
@@ -3850,7 +2975,6 @@ svg {
   font-size: 10px;
   font-weight: 800;
 }
-
 
 /* description */
 
@@ -3863,7 +2987,6 @@ svg {
 
   white-space: nowrap;
 }
-
 
 /* =========================================
    CONNECTOR
@@ -3886,7 +3009,6 @@ svg {
       rgba(32, 190, 242, 0.20),
       rgba(84, 116, 234, 0.25));
 }
-
 
 /* moving data point */
 
@@ -3912,7 +3034,6 @@ svg {
     impactFlow 2.8s linear infinite;
 }
 
-
 /* stagger movement */
 
 .impact-track>i:nth-of-type(2)::after {
@@ -3926,7 +3047,6 @@ svg {
 .impact-track>i:nth-of-type(4)::after {
   animation-delay: 1.05s;
 }
-
 
 /* =========================================
    BOTTOM MESSAGE
@@ -3951,7 +3071,6 @@ svg {
       rgba(112, 83, 234, 0.035));
 }
 
-
 .impact-message-dot {
   width: 8px;
   height: 8px;
@@ -3971,7 +3090,6 @@ svg {
     impactPulse 2.2s ease-in-out infinite;
 }
 
-
 .impact-message p {
   margin: 0;
 
@@ -3980,7 +3098,6 @@ svg {
   font-size: 11px;
   line-height: 1.65;
 }
-
 
 /* =========================================
    ANIMATION
@@ -3997,7 +3114,6 @@ svg {
   }
 }
 
-
 @keyframes impactPulse {
 
   0%,
@@ -4012,45 +3128,13 @@ svg {
   }
 }
 
-
 /* =========================================
    TABLET
 ========================================= */
 
-@media (max-width: 950px) {
-
-  .impact-card {
-    max-width: 100%;
-  }
-
-}
-
-
 /* =========================================
    MOBILE
 ========================================= */
-
-@media (max-width: 650px) {
-
-  .impact-card {
-    padding:
-      30px 20px 24px;
-
-    border-radius: 20px;
-  }
-
-
-  .impact-card::before {
-    left: 20px;
-  }
-
-
-  .impact-heading {
-    margin-bottom: 28px;
-  }
-
-}
-
 
 @keyframes impactFlowMobile {
 
@@ -4063,22 +3147,9 @@ svg {
   }
 }
 
-
 /* =========================================
    REDUCED MOTION
 ========================================= */
-
-@media (prefers-reduced-motion: reduce) {
-
-  .impact-card,
-  .impact-step b,
-  .impact-track>i::after,
-  .impact-message-dot {
-    animation: none;
-    transition: none;
-  }
-
-}
 
 /* =========================================
    TECH STACK
@@ -4098,7 +3169,6 @@ svg {
     #ffffff;
 }
 
-
 /* =========================================
    HEADER
 ========================================= */
@@ -4108,7 +3178,6 @@ svg {
 
   margin-bottom: 42px;
 }
-
 
 .stack-header h2 {
   margin:
@@ -4122,7 +3191,6 @@ svg {
   letter-spacing: -0.04em;
 }
 
-
 .stack-header>p {
   margin: 0;
 
@@ -4133,7 +3201,6 @@ svg {
   font-size: 14px;
   line-height: 1.75;
 }
-
 
 /* =========================================
    GRID
@@ -4147,7 +3214,6 @@ svg {
 
   gap: 18px;
 }
-
 
 /* =========================================
    CARD
@@ -4182,7 +3248,6 @@ svg {
     border-color 0.35s ease;
 }
 
-
 /* top accent */
 
 .stack-card::before {
@@ -4208,7 +3273,6 @@ svg {
     width 0.35s ease;
 }
 
-
 /* glow */
 
 .stack-card::after {
@@ -4232,7 +3296,6 @@ svg {
   pointer-events: none;
 }
 
-
 .stack-card:hover {
   transform: translateY(-6px);
 
@@ -4242,11 +3305,9 @@ svg {
     0 22px 48px rgba(18, 72, 110, 0.11);
 }
 
-
 .stack-card:hover::before {
   width: 95px;
 }
-
 
 /* =========================================
    CARD HEADER
@@ -4263,7 +3324,6 @@ svg {
 
   margin-bottom: 25px;
 }
-
 
 .stack-icon {
   width: 49px;
@@ -4289,7 +3349,6 @@ svg {
     box-shadow 0.3s ease;
 }
 
-
 .stack-card:hover .stack-icon {
   transform:
     translateY(-3px) rotate(-3deg);
@@ -4298,12 +3357,10 @@ svg {
     0 13px 25px rgba(17, 130, 207, 0.24);
 }
 
-
 .stack-card-header>div:last-child {
   display: flex;
   flex-direction: column;
 }
-
 
 .stack-card-header>div:last-child>span {
   margin-bottom: 3px;
@@ -4318,7 +3375,6 @@ svg {
   text-transform: uppercase;
 }
 
-
 .stack-card h3 {
   margin: 0;
 
@@ -4329,7 +3385,6 @@ svg {
 
   letter-spacing: -0.02em;
 }
-
 
 /* =========================================
    ICONS
@@ -4342,7 +3397,6 @@ svg {
       #087be8);
 }
 
-
 .dev-stack-icon {
   background:
     linear-gradient(135deg,
@@ -4350,14 +3404,12 @@ svg {
       #6742dd);
 }
 
-
 .ecosystem-stack-icon {
   background:
     linear-gradient(135deg,
       #38d6ae,
       #109c82);
 }
-
 
 /* =========================================
    TAGS
@@ -4372,7 +3424,6 @@ svg {
 
   gap: 8px;
 }
-
 
 .stack-tags span {
   display: inline-flex;
@@ -4403,7 +3454,6 @@ svg {
     color 0.25s ease;
 }
 
-
 .stack-tags span:hover {
   transform: translateY(-2px);
 
@@ -4413,7 +3463,6 @@ svg {
 
   color: #087dbd;
 }
-
 
 /* =========================================
    DATA 360
@@ -4432,14 +3481,12 @@ svg {
       #faf9ff);
 }
 
-
 .data360-stack-card::before {
   background:
     linear-gradient(90deg,
       #7560ff,
       #29bfff);
 }
-
 
 .data360-stack-card::after {
   background:
@@ -4448,7 +3495,6 @@ svg {
       transparent 68%);
 }
 
-
 .data360-stack-card:hover {
   border-color:
     rgba(111, 91, 232, 0.38);
@@ -4456,7 +3502,6 @@ svg {
   box-shadow:
     0 22px 48px rgba(87, 69, 188, 0.11);
 }
-
 
 .data360-stack-icon {
   position: relative;
@@ -4469,7 +3514,6 @@ svg {
   box-shadow:
     0 9px 22px rgba(100, 78, 224, 0.23);
 }
-
 
 /* animated Data 360 ring */
 
@@ -4489,7 +3533,6 @@ svg {
     stackDataPulse 2.8s ease-out infinite;
 }
 
-
 .data360-stack-card .stack-tags span {
   border-color:
     rgba(111, 91, 232, 0.14);
@@ -4500,7 +3543,6 @@ svg {
   color: #6256ae;
 }
 
-
 .data360-stack-card .stack-tags span:hover {
   border-color:
     rgba(111, 91, 232, 0.30);
@@ -4510,7 +3552,6 @@ svg {
 
   color: #5947c7;
 }
-
 
 @keyframes stackDataPulse {
 
@@ -4526,96 +3567,17 @@ svg {
 
 }
 
-
 /* =========================================
    TABLET
 ========================================= */
-
-@media (max-width: 850px) {
-
-  .stack-grid {
-    grid-template-columns: 1fr;
-  }
-
-
-  .stack-card {
-    min-height: auto;
-  }
-
-}
-
 
 /* =========================================
    MOBILE
 ========================================= */
 
-@media (max-width: 650px) {
-
-  .stack-header {
-    margin-bottom: 30px;
-  }
-
-
-  .stack-card {
-    padding:
-      24px 21px;
-
-    border-radius: 19px;
-  }
-
-
-  .stack-card::before {
-    left: 21px;
-  }
-
-
-  .stack-icon {
-    width: 45px;
-    height: 45px;
-
-    flex-basis: 45px;
-
-    border-radius: 13px;
-  }
-
-
-  .stack-card h3 {
-    font-size: 15px;
-  }
-
-
-  .stack-tags {
-    gap: 7px;
-  }
-
-
-  .stack-tags span {
-    min-height: 27px;
-
-    padding:
-      5px 9px;
-
-    font-size: 8px;
-  }
-
-}
-
-
 /* =========================================
    REDUCED MOTION
 ========================================= */
-
-@media (prefers-reduced-motion: reduce) {
-
-  .stack-card,
-  .stack-icon,
-  .stack-tags span,
-  .data360-stack-icon::after {
-    transition: none;
-    animation: none;
-  }
-
-}
 
 .next-card {
   min-height: 240px;
@@ -4660,7 +3622,6 @@ svg {
   background: #ffffff;
 }
 
-
 /* =========================================
    MAIN CONTACT CARD
 ========================================= */
@@ -4702,7 +3663,6 @@ svg {
     0 35px 80px rgba(5, 40, 75, 0.18);
 }
 
-
 /* =========================================
    BACKGROUND GLOW
 ========================================= */
@@ -4717,7 +3677,6 @@ svg {
   filter: blur(5px);
 }
 
-
 .contact-glow-one {
   width: 260px;
   height: 260px;
@@ -4728,7 +3687,6 @@ svg {
   background:
     rgba(34, 190, 248, 0.08);
 }
-
 
 .contact-glow-two {
   width: 240px;
@@ -4741,7 +3699,6 @@ svg {
     rgba(116, 91, 238, 0.08);
 }
 
-
 /* =========================================
    LEFT CONTENT
 ========================================= */
@@ -4750,7 +3707,6 @@ svg {
   position: relative;
   z-index: 2;
 }
-
 
 .contact-label {
   display: inline-flex;
@@ -4766,7 +3722,6 @@ svg {
 
   text-transform: uppercase;
 }
-
 
 .contact-content h2 {
   max-width: 650px;
@@ -4785,7 +3740,6 @@ svg {
   letter-spacing: -0.045em;
 }
 
-
 .contact-content h2 span {
   display: block;
 
@@ -4803,7 +3757,6 @@ svg {
   color: transparent;
 }
 
-
 .contact-content>p {
   max-width: 610px;
 
@@ -4815,7 +3768,6 @@ svg {
   font-size: 13.5px;
   line-height: 1.8;
 }
-
 
 /* =========================================
    CAPABILITIES
@@ -4829,7 +3781,6 @@ svg {
 
   margin-top: 27px;
 }
-
 
 .contact-capabilities>span {
   display: inline-flex;
@@ -4854,7 +3805,6 @@ svg {
   font-weight: 700;
 }
 
-
 .contact-capabilities i {
   width: 5px;
   height: 5px;
@@ -4867,7 +3817,6 @@ svg {
     0 0 8px rgba(61, 213, 170, 0.65);
 }
 
-
 /* =========================================
    BUTTON
 ========================================= */
@@ -4875,7 +3824,6 @@ svg {
 .contact-actions {
   margin-top: 32px;
 }
-
 
 .contact-button {
   display: inline-flex;
@@ -4911,14 +3859,12 @@ svg {
     box-shadow 0.3s ease;
 }
 
-
 .contact-button>span {
   font-size: 17px;
 
   transition:
     transform 0.3s ease;
 }
-
 
 .contact-button:hover {
   transform: translateY(-3px);
@@ -4927,11 +3873,9 @@ svg {
     0 18px 35px rgba(11, 137, 220, 0.34);
 }
 
-
 .contact-button:hover>span {
   transform: translateX(4px);
 }
-
 
 /* =========================================
    RIGHT VISUAL
@@ -4943,7 +3887,6 @@ svg {
 
   width: 100%;
 }
-
 
 .contact-window {
   width: 100%;
@@ -4969,7 +3912,6 @@ svg {
     border-color 0.35s ease;
 }
 
-
 .contact-window:hover {
   transform:
     translateY(-5px) rotate(0.3deg);
@@ -4977,7 +3919,6 @@ svg {
   border-color:
     rgba(74, 193, 243, 0.28);
 }
-
 
 /* =========================================
    WINDOW HEADER
@@ -4996,13 +3937,11 @@ svg {
     1px solid rgba(255, 255, 255, 0.055);
 }
 
-
 .window-dots {
   display: flex;
 
   gap: 5px;
 }
-
 
 .window-dots span {
   width: 6px;
@@ -5013,21 +3952,17 @@ svg {
   background: #486b87;
 }
 
-
 .window-dots span:nth-child(1) {
   background: #ff6f6f;
 }
-
 
 .window-dots span:nth-child(2) {
   background: #ffc963;
 }
 
-
 .window-dots span:nth-child(3) {
   background: #4bd6a7;
 }
-
 
 .window-title {
   margin-left: 14px;
@@ -5041,7 +3976,6 @@ svg {
 
   letter-spacing: 0.08em;
 }
-
 
 .window-status {
   display: flex;
@@ -5061,7 +3995,6 @@ svg {
   letter-spacing: 0.08em;
 }
 
-
 .window-status i {
   width: 5px;
   height: 5px;
@@ -5077,7 +4010,6 @@ svg {
     contactStatusPulse 2s ease-in-out infinite;
 }
 
-
 /* =========================================
    WINDOW BODY
 ========================================= */
@@ -5086,7 +4018,6 @@ svg {
   padding:
     30px 27px;
 }
-
 
 .contact-small-label {
   color: #5982a2;
@@ -5098,7 +4029,6 @@ svg {
 
   text-transform: uppercase;
 }
-
 
 .contact-window-body h3 {
   margin:
@@ -5112,11 +4042,9 @@ svg {
   letter-spacing: -0.035em;
 }
 
-
 .contact-window-body h3 span {
   color: #41c9f4;
 }
-
 
 /* =========================================
    EMAIL
@@ -5143,7 +4071,6 @@ svg {
     background 0.25s ease;
 }
 
-
 .contact-email-box:hover {
   border-color:
     rgba(72, 192, 240, 0.25);
@@ -5151,7 +4078,6 @@ svg {
   background:
     rgba(255, 255, 255, 0.05);
 }
-
 
 .email-icon {
   width: 38px;
@@ -5174,14 +4100,12 @@ svg {
   font-size: 13px;
 }
 
-
 .contact-email-box>div:last-child {
   min-width: 0;
 
   display: flex;
   flex-direction: column;
 }
-
 
 .contact-email-box small {
   margin-bottom: 3px;
@@ -5190,7 +4114,6 @@ svg {
 
   font-size: 7px;
 }
-
 
 .contact-email-box a {
   overflow-wrap: anywhere;
@@ -5203,7 +4126,6 @@ svg {
   text-decoration: none;
 }
 
-
 /* =========================================
    PROCESS
 ========================================= */
@@ -5215,7 +4137,6 @@ svg {
   margin-top: 27px;
 }
 
-
 .contact-process-step {
   flex: 0 0 58px;
 
@@ -5223,7 +4144,6 @@ svg {
   flex-direction: column;
   align-items: center;
 }
-
 
 .contact-process-step b {
   width: 32px;
@@ -5245,7 +4165,6 @@ svg {
   font-size: 8px;
 }
 
-
 .contact-process-step span {
   margin-top: 7px;
 
@@ -5254,7 +4173,6 @@ svg {
   font-size: 7px;
   font-weight: 700;
 }
-
 
 .contact-process>i {
   position: relative;
@@ -5270,7 +4188,6 @@ svg {
   background:
     rgba(65, 175, 225, 0.12);
 }
-
 
 .contact-process>i::after {
   content: "";
@@ -5294,7 +4211,6 @@ svg {
     contactFlow 2.5s linear infinite;
 }
 
-
 /* =========================================
    WINDOW FOOTER
 ========================================= */
@@ -5317,14 +4233,12 @@ svg {
   font-size: 7px;
 }
 
-
 .contact-window-footer>span:first-child {
   display: flex;
   align-items: center;
 
   gap: 6px;
 }
-
 
 .contact-window-footer i {
   width: 5px;
@@ -5337,7 +4251,6 @@ svg {
   box-shadow:
     0 0 7px rgba(70, 215, 167, 0.65);
 }
-
 
 /* =========================================
    ANIMATIONS
@@ -5358,7 +4271,6 @@ svg {
 
 }
 
-
 @keyframes contactFlow {
 
   from {
@@ -5371,157 +4283,21 @@ svg {
 
 }
 
-
 /* =========================================
    TABLET
 ========================================= */
-
-@media (max-width: 1000px) {
-
-  .contact-card {
-    grid-template-columns: 1fr;
-
-    gap: 55px;
-
-    padding: 55px;
-  }
-
-
-  .contact-content {
-    max-width: 720px;
-  }
-
-
-  .contact-visual {
-    max-width: 650px;
-
-    justify-self: center;
-  }
-
-}
-
 
 /* =========================================
    MOBILE
 ========================================= */
 
-@media (max-width: 650px) {
-
-  .contact {
-    padding-top: 70px;
-    padding-bottom: 70px;
-  }
-
-
-  .contact-card {
-    gap: 42px;
-
-    padding:
-      40px 22px;
-
-    border-radius: 23px;
-  }
-
-
-  .contact-content h2 {
-    font-size:
-      clamp(31px, 10vw, 42px);
-  }
-
-
-  .contact-content>p {
-    font-size: 13px;
-  }
-
-
-  .contact-capabilities {
-    gap: 7px;
-  }
-
-
-  .contact-capabilities>span {
-    padding:
-      6px 9px;
-
-    font-size: 7px;
-  }
-
-
-  .contact-button {
-    width: 100%;
-  }
-
-
-  .contact-window-body {
-    padding:
-      25px 18px;
-  }
-
-
-  .contact-window-body h3 {
-    font-size: 20px;
-  }
-
-
-  .contact-process-step {
-    flex-basis: 52px;
-  }
-
-
-  .contact-window-footer {
-    padding:
-      12px 14px;
-  }
-
-}
-
-
 /* =========================================
    SMALL MOBILE
 ========================================= */
 
-@media (max-width: 400px) {
-
-  .contact-card {
-    padding:
-      35px 17px;
-  }
-
-
-  .contact-window-header {
-    padding:
-      0 13px;
-  }
-
-
-  .window-title {
-    display: none;
-  }
-
-
-  .contact-window-footer>span:last-child {
-    display: none;
-  }
-
-}
-
-
 /* =========================================
    REDUCED MOTION
 ========================================= */
-
-@media (prefers-reduced-motion: reduce) {
-
-  .contact-window,
-  .contact-button,
-  .contact-button>span,
-  .window-status i,
-  .contact-process>i::after {
-    transition: none;
-    animation: none;
-  }
-
-}
 
 /* =========================================
    FOOTER
@@ -5547,7 +4323,6 @@ svg {
     1px solid rgba(73, 178, 229, 0.10);
 }
 
-
 /* subtle top glow */
 
 .footer::before {
@@ -5571,7 +4346,6 @@ svg {
       transparent);
 }
 
-
 /* =========================================
    MAIN GRID
 ========================================= */
@@ -5587,7 +4361,6 @@ svg {
   padding-bottom: 50px;
 }
 
-
 /* =========================================
    BRAND
 ========================================= */
@@ -5595,7 +4368,6 @@ svg {
 .footer-brand {
   max-width: 430px;
 }
-
 
 .footer-logo {
   display: inline-flex;
@@ -5607,7 +4379,6 @@ svg {
 
   text-decoration: none;
 }
-
 
 .footer-logo-mark {
   width: 38px;
@@ -5632,7 +4403,6 @@ svg {
     0 9px 20px rgba(17, 137, 216, 0.20);
 }
 
-
 .footer-logo-text {
   color: #ffffff;
 
@@ -5641,7 +4411,6 @@ svg {
 
   letter-spacing: -0.02em;
 }
-
 
 .footer-brand>p {
   max-width: 400px;
@@ -5654,7 +4423,6 @@ svg {
   font-size: 11px;
   line-height: 1.8;
 }
-
 
 /* =========================================
    STATUS
@@ -5687,7 +4455,6 @@ svg {
   letter-spacing: 0.03em;
 }
 
-
 .footer-status-dot {
   width: 6px;
   height: 6px;
@@ -5703,7 +4470,6 @@ svg {
     footerStatusPulse 2.2s ease-in-out infinite;
 }
 
-
 /* =========================================
    COLUMNS
 ========================================= */
@@ -5714,7 +4480,6 @@ svg {
 
   align-items: flex-start;
 }
-
 
 .footer-column-title {
   margin-bottom: 18px;
@@ -5729,7 +4494,6 @@ svg {
   text-transform: uppercase;
 }
 
-
 /* =========================================
    NAVIGATION
 ========================================= */
@@ -5740,7 +4504,6 @@ svg {
 
   gap: 11px;
 }
-
 
 .footer-links a {
   position: relative;
@@ -5759,7 +4522,6 @@ svg {
     transform 0.25s ease;
 }
 
-
 .footer-links a::after {
   content: "";
 
@@ -5777,7 +4539,6 @@ svg {
     width 0.3s ease;
 }
 
-
 .footer-links a:hover {
   color: #d8edf8;
 
@@ -5785,11 +4546,9 @@ svg {
     translateX(3px);
 }
 
-
 .footer-links a:hover::after {
   width: 100%;
 }
-
 
 /* =========================================
    CONTACT
@@ -5806,7 +4565,6 @@ svg {
   font-size: 10px;
   line-height: 1.6;
 }
-
 
 .footer-email {
   display: flex;
@@ -5827,7 +4585,6 @@ svg {
     color 0.25s ease,
     transform 0.25s ease;
 }
-
 
 .footer-email-icon {
   width: 30px;
@@ -5851,11 +4608,9 @@ svg {
   font-size: 10px;
 }
 
-
 .footer-email>span:last-child {
   overflow-wrap: anywhere;
 }
-
 
 .footer-email:hover {
   color: #ffffff;
@@ -5863,7 +4618,6 @@ svg {
   transform:
     translateX(3px);
 }
-
 
 /* =========================================
    BOTTOM BAR
@@ -5882,7 +4636,6 @@ svg {
     1px solid rgba(255, 255, 255, 0.055);
 }
 
-
 .footer-bottom>p {
   margin: 0;
 
@@ -5890,7 +4643,6 @@ svg {
 
   font-size: 8px;
 }
-
 
 .footer-bottom-right {
   display: flex;
@@ -5908,7 +4660,6 @@ svg {
   text-transform: uppercase;
 }
 
-
 .footer-bottom-right i {
   width: 3px;
   height: 3px;
@@ -5917,7 +4668,6 @@ svg {
 
   background: #2b8bb5;
 }
-
 
 /* =========================================
    ANIMATION
@@ -5938,85 +4688,17 @@ svg {
 
 }
 
-
 /* =========================================
    TABLET
 ========================================= */
-
-@media (max-width: 850px) {
-
-  .footer-main {
-    grid-template-columns:
-      1.4fr 0.6fr;
-
-    gap:
-      45px 60px;
-  }
-
-
-  .footer-contact {
-    grid-column:
-      1 / -1;
-  }
-
-}
-
 
 /* =========================================
    MOBILE
 ========================================= */
 
-@media (max-width: 600px) {
-
-  .footer {
-    padding:
-      55px 0 22px;
-  }
-
-
-  .footer-main {
-    grid-template-columns: 1fr;
-
-    gap: 38px;
-
-    padding-bottom: 38px;
-  }
-
-
-  .footer-contact {
-    grid-column: auto;
-  }
-
-
-  .footer-brand {
-    max-width: 100%;
-  }
-
-
-  .footer-bottom {
-    flex-direction: column;
-    align-items: flex-start;
-
-    gap: 13px;
-  }
-
-}
-
-
 /* =========================================
    REDUCED MOTION
 ========================================= */
-
-@media (prefers-reduced-motion: reduce) {
-
-  .footer-status-dot,
-  .footer-links a,
-  .footer-email {
-    animation: none;
-    transition: none;
-  }
-
-}
 
 .reveal {
   opacity: 0;
@@ -6029,7 +4711,6 @@ svg {
   transform: translateY(0)
 }
 
-
 @keyframes flow {
   from {
     transform: translateX(-100%)
@@ -6039,7 +4720,6 @@ svg {
     transform: translateX(220%)
   }
 }
-
 
 @keyframes spin {
   to {
@@ -6053,24 +4733,44 @@ svg {
   }
 }
 
-@media (max-width: 950px) {
+/* RESPONSIVE */
 
-  .experience-layout {
-    grid-template-columns: 1fr;
-    gap: 45px;
-    align-items: start;
-  }
+/* =========================================================
+   RESPONSIVE MEDIA QUERIES — CONSOLIDATED IN ONE PLACE
+   Larger breakpoints first; smaller breakpoints later.
+========================================================= */
 
-  .impact-card {
-    width: 100%;
-    max-width: 650px;
-    justify-self: center;
+/* =========================================================
+   MEDIA QUERIES — CONSOLIDATED AT BOTTOM
+========================================================= */
+
+@media (max-width:1240px) {
+.hero-visual {
+    padding-inline: 34px
   }
 }
 
-@media(max-width:1080px) {
+@media (max-width:1100px) {
+.journey-window {
+    max-width: 600px;
+  }
 
-  .hero-layout,
+  .journey-flow {
+    padding-left: 12px;
+    padding-right: 12px;
+  }
+
+  .journey-node {
+    width: 78px;
+  }
+
+  .journey-connector {
+    width: 22px;
+  }
+}
+
+@media (max-width:1080px) {
+.hero-layout,
   .about-layout,
   .experience-layout,
   .stack-layout,
@@ -6104,8 +4804,117 @@ svg {
   }
 }
 
-@media(max-width:780px) {
-  .nav-toggle {
+@media (max-width:1000px) {
+.contact-card {
+    grid-template-columns: 1fr;
+
+    gap: 55px;
+
+    padding: 55px;
+  }
+
+
+  .contact-content {
+    max-width: 720px;
+  }
+
+
+  .contact-visual {
+    max-width: 650px;
+
+    justify-self: center;
+  }
+}
+
+@media (max-width:950px) {
+.testimonial-card {
+    flex:
+      0 0 calc((100% - 18px) / 2);
+  }
+.about-visual {
+    margin-top: 15px;
+  }
+
+  .customer-flow-card {
+    max-width: 650px;
+  }
+.services-grid {
+    grid-template-columns:
+      repeat(2, minmax(0, 1fr));
+
+    gap: 16px;
+  }
+
+
+  .service-card {
+    min-height: 315px;
+
+    padding: 26px;
+  }
+
+
+  .service-card h3 {
+    font-size: 18px;
+  }
+.impact-card {
+    max-width: 100%;
+  }
+.experience-layout {
+    grid-template-columns: 1fr;
+    gap: 45px;
+    align-items: start;
+  }
+
+  .impact-card {
+    width: 100%;
+    max-width: 650px;
+    justify-self: center;
+  }
+.testimonial-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .testimonial-card:last-child {
+    grid-column: 1 / -1;
+  }
+}
+
+@media (max-width:920px) {
+.hero-visual {
+    padding-inline: 0
+  }
+
+  .journey-window {
+    width: 92%
+  }
+}
+
+@media (max-width:850px) {
+.stack-grid {
+    grid-template-columns: 1fr;
+  }
+
+
+  .stack-card {
+    min-height: auto;
+  }
+.footer-main {
+    grid-template-columns:
+      1.4fr 0.6fr;
+
+    gap:
+      45px 60px;
+  }
+
+
+  .footer-contact {
+    grid-column:
+      1 / -1;
+  }
+}
+
+@media (max-width:780px) {
+.nav-toggle {
     display: block
   }
 
@@ -6197,8 +5006,340 @@ svg {
   }
 }
 
-@media(max-width:560px) {
-  .container {
+@media (max-width:760px) {
+.hero-visual {
+    margin-top: 35px;
+  }
+
+  .journey-window {
+    width: 100%;
+
+    border-radius: 20px;
+  }
+
+  .node-icon {
+    width: 39px;
+    height: 39px;
+
+    border-radius: 11px;
+
+    font-size: 12px;
+  }
+
+  .node-copy strong {
+    font-size: 8px;
+
+    white-space: normal;
+  }
+
+  .node-copy span {
+    font-size: 7px;
+  }
+}
+
+@media (max-width:700px) {
+
+}
+
+@media (max-width:650px) {
+.testimonial-header {
+    align-items: flex-start;
+
+    margin-bottom: 30px;
+  }
+
+
+  .testimonial-header p {
+    font-size: 13px;
+  }
+
+
+  .testimonial-controls {
+    display: none;
+  }
+
+
+  .testimonial-card {
+    flex: 0 0 100%;
+
+    min-height: 335px;
+
+    padding: 24px 21px;
+
+    border-radius: 19px;
+  }
+
+
+  .testimonial-card::before {
+    left: 21px;
+  }
+
+
+  .testimonial-text {
+    font-size: 12px;
+  }
+
+
+  .testimonial-carousel {
+    touch-action: pan-y;
+  }
+.customer-flow-header {
+    padding:
+      16px 15px;
+  }
+
+  .flow-node {
+    width: 39px;
+    height: 39px;
+
+    border-radius: 11px;
+  }
+
+  .flow-node-copy strong {
+    font-size: 8px;
+  }
+
+  .flow-node-copy span {
+    font-size: 7px;
+  }
+.services-grid {
+    grid-template-columns: 1fr;
+
+    gap: 14px;
+
+    margin-top: 32px;
+  }
+
+
+  .service-card {
+    min-height: auto;
+
+    padding:
+      25px 22px;
+
+    border-radius: 19px;
+  }
+
+
+  .service-card-top {
+    margin-bottom: 20px;
+  }
+
+
+  .service-icon {
+    width: 47px;
+    height: 47px;
+
+    border-radius: 13px;
+  }
+
+
+  .service-card h3 {
+    font-size: 18px;
+  }
+
+
+  .service-card>p {
+    font-size: 13px;
+    line-height: 1.7;
+  }
+
+
+  .service-tags {
+    margin-top: 20px;
+    padding-top: 0;
+  }
+
+
+  .service-tags span {
+    padding:
+      5px 9px;
+
+    font-size: 8px;
+  }
+
+
+  .service-card::after {
+    left: 22px;
+  }
+.impact-card {
+    padding:
+      30px 20px 24px;
+
+    border-radius: 20px;
+  }
+
+
+  .impact-card::before {
+    left: 20px;
+  }
+
+
+  .impact-heading {
+    margin-bottom: 28px;
+  }
+.stack-header {
+    margin-bottom: 30px;
+  }
+
+
+  .stack-card {
+    padding:
+      24px 21px;
+
+    border-radius: 19px;
+  }
+
+
+  .stack-card::before {
+    left: 21px;
+  }
+
+
+  .stack-icon {
+    width: 45px;
+    height: 45px;
+
+    flex-basis: 45px;
+
+    border-radius: 13px;
+  }
+
+
+  .stack-card h3 {
+    font-size: 15px;
+  }
+
+
+  .stack-tags {
+    gap: 7px;
+  }
+
+
+  .stack-tags span {
+    min-height: 27px;
+
+    padding:
+      5px 9px;
+
+    font-size: 8px;
+  }
+.contact {
+    padding-top: 70px;
+    padding-bottom: 70px;
+  }
+
+
+  .contact-card {
+    gap: 42px;
+
+    padding:
+      40px 22px;
+
+    border-radius: 23px;
+  }
+
+
+  .contact-content h2 {
+    font-size:
+      clamp(31px, 10vw, 42px);
+  }
+
+
+  .contact-content>p {
+    font-size: 13px;
+  }
+
+
+  .contact-capabilities {
+    gap: 7px;
+  }
+
+
+  .contact-capabilities>span {
+    padding:
+      6px 9px;
+
+    font-size: 7px;
+  }
+
+
+  .contact-button {
+    width: 100%;
+  }
+
+
+  .contact-window-body {
+    padding:
+      25px 18px;
+  }
+
+
+  .contact-window-body h3 {
+    font-size: 20px;
+  }
+
+
+  .contact-process-step {
+    flex-basis: 52px;
+  }
+
+
+  .contact-window-footer {
+    padding:
+      12px 14px;
+  }
+.testimonial-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .testimonial-card,
+  .testimonial-card:last-child {
+    grid-column: auto;
+  }
+
+  .testimonial-card {
+    min-height: 300px;
+    padding: 27px 23px;
+  }
+}
+
+@media (max-width:600px) {
+.footer {
+    padding:
+      55px 0 22px;
+  }
+
+
+  .footer-main {
+    grid-template-columns: 1fr;
+
+    gap: 38px;
+
+    padding-bottom: 38px;
+  }
+
+
+  .footer-contact {
+    grid-column: auto;
+  }
+
+
+  .footer-brand {
+    max-width: 100%;
+  }
+
+
+  .footer-bottom {
+    flex-direction: column;
+    align-items: flex-start;
+
+    gap: 13px;
+  }
+}
+
+@media (max-width:560px) {
+.container {
     width: min(var(--container), calc(100% - 28px))
   }
 
@@ -6270,9 +5411,474 @@ svg {
     }
 }
 
-@media(prefers-reduced-motion:reduce) {
+@media (max-width:480px) {
+.journey-window-header {
+    padding:
+      16px 15px;
+  }
 
-  *,
+  .sf-cloud {
+    width: 34px;
+    height: 34px;
+  }
+
+  .window-title strong {
+    font-size: 11px;
+  }
+
+  .window-status {
+    padding:
+      5px 8px;
+
+    font-size: 7px;
+  }
+
+  .journey-flow {
+    grid-template-columns:
+      repeat(3, 1fr);
+
+    row-gap: 22px;
+  }
+
+  .journey-node {
+    min-width: 0;
+  }
+
+  .journey-node:nth-of-type(7),
+  .journey-node:nth-of-type(9) {
+    grid-column: auto;
+  }
+
+  .data-layer-head {
+    align-items: flex-start;
+    gap: 10px;
+
+    flex-direction: column;
+  }
+
+  .code-tabs {
+    width: 100%;
+  }
+
+  .code-tab {
+    flex: 1;
+  }
+
+
+  /* =========================================
+     DATA 360 → ACTIVATION → MARKETING CLOUD
+     480PX ONLY
+  ========================================= */
+
+  .data-flow {
+    display: grid;
+    grid-template-columns: minmax(95px, 1fr) 65px minmax(95px, 1fr);
+    align-items: center;
+    gap: 8px;
+    width: 100%;
+  }
+
+  .data-flow-side {
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .data-flow-label {
+    width: 100%;
+    margin-bottom: 10px;
+    color: #58b9ef;
+    font-size: 7px;
+    font-weight: 700;
+    line-height: 1.2;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    text-align: center;
+  }
+
+  .data-flow-content,
+  .data-flow-side.right .data-flow-content {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 6px;
+    text-align: center;
+  }
+
+  .data-flow-dot {
+    display: block;
+    flex: none;
+    width: 10px;
+    height: 10px;
+    margin: 0;
+    border-radius: 50%;
+    background: #32cdf5;
+    box-shadow:
+      0 0 8px rgba(50, 205, 245, 0.75),
+      0 0 15px rgba(50, 205, 245, 0.28);
+  }
+
+  .data-flow-side.left .data-flow-dot {
+    background: #7862ff;
+    box-shadow:
+      0 0 8px rgba(120, 98, 255, 0.75),
+      0 0 15px rgba(120, 98, 255, 0.28);
+  }
+
+  .data-flow-copy {
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .data-flow-copy strong {
+    display: block;
+    margin: 0;
+    color: #ffffff;
+    font-size: 10px;
+    font-weight: 700;
+    line-height: 1.3;
+    white-space: nowrap;
+  }
+
+  .data-flow-copy span {
+    display: block;
+    max-width: 90px;
+    margin-top: 3px;
+    color: #62a8d5;
+    font-size: 8px;
+    font-weight: 400;
+    line-height: 1.4;
+  }
+
+  .data-flow-center {
+    width: 100%;
+    align-self: center;
+    text-align: center;
+  }
+
+  .activation-line {
+    width: 46px;
+    max-width: 100%;
+    height: 2px;
+    margin: 0 auto 7px;
+    border-radius: 10px;
+    background: linear-gradient(90deg, #4055a5, #1689af);
+  }
+
+  .data-flow-center span {
+    display: block;
+    color: #5db9ed;
+    font-size: 6px;
+    font-weight: 700;
+    line-height: 1;
+    letter-spacing: 0.07em;
+    text-transform: uppercase;
+    white-space: nowrap;
+  }
+  /* =========================================
+   DATA 360 → ACTIVATION → MARKETING CLOUD
+   MOBILE ≤ 480PX
+========================================= */
+
+.data-flow {
+  display: grid;
+  grid-template-columns: minmax(90px, 1fr) 70px minmax(90px, 1fr);
+  align-items: center;
+  gap: 8px;
+  width: 100%;
+}
+
+/* LEFT + RIGHT COLUMNS */
+
+.data-flow-side {
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+/* TOP LABEL */
+
+.data-flow-label {
+  width: 100%;
+  margin-bottom: 10px;
+
+  color: #58b9ef;
+
+  font-size: 7px;
+  font-weight: 700;
+  line-height: 1.2;
+
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  text-align: center;
+}
+
+/* DOT + TEXT STACK */
+
+.data-flow-content,
+.data-flow-side.right .data-flow-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+
+  width: 100%;
+  gap: 6px;
+
+  text-align: center;
+}
+
+/* DOT */
+
+.data-flow-dot {
+  display: block;
+  flex: none;
+
+  width: 10px;
+  height: 10px;
+  margin: 0;
+
+  border-radius: 50%;
+
+  background: #32cdf5;
+
+  box-shadow:
+    0 0 8px rgba(50, 205, 245, 0.75),
+    0 0 15px rgba(50, 205, 245, 0.28);
+}
+
+/* LEFT DATA 360 DOT */
+
+.data-flow-side.left .data-flow-dot {
+  background: #7862ff;
+
+  box-shadow:
+    0 0 8px rgba(120, 98, 255, 0.75),
+    0 0 15px rgba(120, 98, 255, 0.28);
+}
+
+/* TEXT */
+
+.data-flow-copy {
+  min-width: 0;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  text-align: center;
+}
+
+.data-flow-copy strong {
+  display: block;
+  margin: 0;
+
+  color: #ffffff;
+
+  font-size: 10px;
+  font-weight: 700;
+  line-height: 1.3;
+
+  white-space: nowrap;
+}
+
+.data-flow-copy span {
+  display: block;
+
+  max-width: 90px;
+  margin-top: 3px;
+
+  color: #62a8d5;
+
+  font-size: 8px;
+  font-weight: 400;
+  line-height: 1.4;
+
+  text-align: center;
+}
+
+/* CENTER ACTIVATION */
+
+.data-flow-center {
+  width: 100%;
+
+  align-self: center;
+
+  text-align: center;
+}
+
+.activation-line {
+  width: 46px;
+  max-width: 100%;
+  height: 2px;
+
+  margin: 0 auto 7px;
+
+  border-radius: 10px;
+
+  background: linear-gradient(
+    90deg,
+    #4055a5,
+    #1689af
+  );
+}
+
+.data-flow-center span {
+  display: block;
+
+  color: #5db9ed;
+
+  font-size: 6px;
+  font-weight: 700;
+  line-height: 1;
+
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+
+  white-space: nowrap;
+}
+}
+
+@media (max-width:450px) {
+.customer-flow {
+    grid-template-columns:
+      repeat(3, 1fr);
+
+    row-gap: 22px;
+  }
+
+  .flow-live {
+    padding:
+      5px 7px;
+
+    font-size: 6px;
+  }
+
+  .customer-flow-title strong {
+    font-size: 11px;
+  }
+
+  .customer-flow-title small {
+    font-size: 7px;
+  }
+}
+
+@media (max-width:420px) {
+.service-card {
+    padding:
+      23px 19px;
+  }
+
+
+  .service-card h3 {
+    font-size: 17px;
+  }
+
+
+  .service-card>p {
+    font-size: 12.5px;
+  }
+
+
+  .data360-badge {
+    font-size: 7px;
+
+    padding:
+      5px 8px;
+  }
+}
+
+@media (max-width:400px) {
+.contact-card {
+    padding:
+      35px 17px;
+  }
+
+
+  .contact-window-header {
+    padding:
+      0 13px;
+  }
+
+
+  .window-title {
+    display: none;
+  }
+
+
+  .contact-window-footer>span:last-child {
+    display: none;
+  }
+}
+
+@media (prefers-reduced-motion:reduce) {
+.journey-window,
+  .window-status span,
+  .pulse-dot,
+  .featured-node .node-icon::after,
+  .journey-connector span {
+    animation: none;
+  }
+.testimonial-track,
+  .testimonial-card,
+  .testimonial-arrow,
+  .testimonial-dot {
+    transition: none;
+  }
+.flow-live span,
+  .flow-status span,
+  .unify-node::after,
+  .flow-line span,
+  .bridge-pulse,
+  .about-hand-note,
+  .about-hand-note::after {
+    animation: none;
+  }
+.service-card,
+  .service-icon,
+  .service-tags span,
+  .data360-icon::after {
+    transition: none;
+    animation: none;
+  }
+.impact-card,
+  .impact-step b,
+  .impact-track>i::after,
+  .impact-message-dot {
+    animation: none;
+    transition: none;
+  }
+.stack-card,
+  .stack-icon,
+  .stack-tags span,
+  .data360-stack-icon::after {
+    transition: none;
+    animation: none;
+  }
+.contact-window,
+  .contact-button,
+  .contact-button>span,
+  .window-status i,
+  .contact-process>i::after {
+    transition: none;
+    animation: none;
+  }
+.footer-status-dot,
+  .footer-links a,
+  .footer-email {
+    animation: none;
+    transition: none;
+  }
+*,
   *::before,
   *::after {
     animation: none !important;
@@ -6283,55 +5889,5 @@ svg {
   .reveal {
     opacity: 1;
     transform: none
-  }
-}
-
-
-@media(max-width:1240px) {
-  .hero-visual {
-    padding-inline: 34px
-  }
-
-}
-
-@media(max-width:920px) {
-
-  .hero-visual {
-    padding-inline: 0
-  }
-
-  .journey-window {
-    width: 92%
-  }
-}
-
-/* RESPONSIVE */
-
-@media (max-width: 950px) {
-
-  .testimonial-grid {
-    grid-template-columns: 1fr 1fr;
-  }
-
-  .testimonial-card:last-child {
-    grid-column: 1 / -1;
-  }
-}
-
-
-@media (max-width: 650px) {
-
-  .testimonial-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .testimonial-card,
-  .testimonial-card:last-child {
-    grid-column: auto;
-  }
-
-  .testimonial-card {
-    min-height: 300px;
-    padding: 27px 23px;
   }
 }

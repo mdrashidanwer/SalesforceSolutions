@@ -2606,26 +2606,6 @@ svg {
       16px 15px;
   }
 
-  .customer-flow {
-    display: grid;
-
-    grid-template-columns:
-      repeat(5, 1fr);
-
-    gap: 6px;
-
-    padding:
-      28px 10px;
-  }
-
-  .customer-flow-step {
-    width: auto;
-  }
-
-  .flow-line {
-    display: none;
-  }
-
   .flow-node {
     width: 39px;
     height: 39px;
@@ -2641,48 +2621,6 @@ svg {
     font-size: 7px;
   }
 
-
-  /* DATA 360 / SFMC BRIDGE */
-
-  .platform-bridge {
-    grid-template-columns: 1fr;
-
-    gap: 16px;
-
-    margin:
-      0 14px
-      14px;
-  }
-
-  .platform-side-right {
-    text-align: left;
-  }
-
-  .platform-side-right .platform-name {
-    justify-content: flex-start;
-  }
-
-  .platform-side-right .platform-name div {
-    align-items: flex-start;
-  }
-
-  .bridge-middle {
-    width: 100%;
-  }
-
-  .bridge-line {
-    width: 100%;
-  }
-
-
-  .customer-flow-footer {
-    padding:
-      12px 15px;
-  }
-
-  .flow-result {
-    display: none;
-  }
 }
 
 

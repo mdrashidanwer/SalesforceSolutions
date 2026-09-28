@@ -729,7 +729,7 @@ document.addEventListener(
 );
 
 
-/* Block common inspection shortcuts */
+/* Block common inspection shortcuts 
 
 document.addEventListener(
   "keydown",
@@ -765,4 +765,4 @@ document.addEventListener(
     }
 
   }
-);
+);*/

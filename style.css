@@ -5583,92 +5583,316 @@ svg {
     white-space: nowrap;
   }
   /* =========================================
-   DATA 360 → ACTIVATION → MARKETING CLOUD
-   MOBILE ≤ 480PX
+   PLATFORM BRIDGE — MOBILE FIX
 ========================================= */
 
-.data-flow {
-  display: grid;
-  grid-template-columns: minmax(90px, 1fr) 70px minmax(90px, 1fr);
-  align-items: center;
-  gap: 8px;
+.platform-bridge {
+  /* reset desktop sizing */
+  position: relative;
+  left: auto;
+  right: auto;
+  transform: none;
+
   width: 100%;
+  min-width: 0;
+  max-width: 100%;
+
+  box-sizing: border-box;
+
+  display: grid;
+  grid-template-columns: 1fr 44px 1fr;
+
+  align-items: center;
+  justify-content: stretch;
+
+  gap: 0;
+
+  margin: 0;
+  padding: 14px 6px;
+
+  overflow: hidden;
 }
 
-/* LEFT + RIGHT COLUMNS */
 
-.data-flow-side {
+/* LEFT + RIGHT */
+
+.platform-side,
+.platform-side-right {
+  position: static;
+
+  width: auto;
   min-width: 0;
+  max-width: 100%;
+
+  margin: 0;
+  padding: 0;
+
+  transform: none;
+
   display: flex;
   flex-direction: column;
   align-items: center;
+
   text-align: center;
 }
 
-/* TOP LABEL */
 
-.data-flow-label {
-  width: 100%;
-  margin-bottom: 10px;
+/* LABEL */
 
-  color: #58b9ef;
+.platform-label {
+  display: block;
 
-  font-size: 7px;
+  width: auto;
+  max-width: 100%;
+
+  margin: 0 0 9px;
+
+  font-size: 5.5px;
   font-weight: 700;
   line-height: 1.2;
 
-  letter-spacing: 0.1em;
+  letter-spacing: 0.06em;
   text-transform: uppercase;
+
   text-align: center;
+  white-space: nowrap;
 }
 
-/* DOT + TEXT STACK */
 
-.data-flow-content,
-.data-flow-side.right .data-flow-content {
+/* DOT + CONTENT */
+
+.platform-name,
+.platform-side-right .platform-name {
+  width: 100%;
+  min-width: 0;
+  max-width: 100%;
+
+  margin: 0;
+  padding: 0;
+
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: flex-start;
 
-  width: 100%;
-  gap: 6px;
+  gap: 5px;
 
   text-align: center;
+
+  transform: none;
 }
+
 
 /* DOT */
 
-.data-flow-dot {
-  display: block;
+.platform-dot {
+  position: static;
+
   flex: none;
 
   width: 10px;
   height: 10px;
+
+  margin: 0;
+}
+
+
+/* TEXT CONTAINER */
+
+.platform-name > div {
+  width: 100%;
+  min-width: 0;
+  max-width: 100%;
+
   margin: 0;
 
-  border-radius: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 
-  background: #32cdf5;
-
-  box-shadow:
-    0 0 8px rgba(50, 205, 245, 0.75),
-    0 0 15px rgba(50, 205, 245, 0.28);
+  text-align: center;
 }
 
-/* LEFT DATA 360 DOT */
 
-.data-flow-side.left .data-flow-dot {
-  background: #7862ff;
+/* MAIN NAME */
 
-  box-shadow:
-    0 0 8px rgba(120, 98, 255, 0.75),
-    0 0 15px rgba(120, 98, 255, 0.28);
+.platform-name strong {
+  display: block;
+
+  width: 100%;
+  max-width: 100%;
+
+  margin: 0;
+
+  font-size: 9px;
+  line-height: 1.25;
+
+  text-align: center;
+
+  white-space: normal;
 }
 
-/* TEXT */
 
-.data-flow-copy {
+/* SUBTEXT */
+
+.platform-name small {
+  display: block;
+
+  width: 100%;
+  max-width: 85px;
+
+  margin: 3px auto 0;
+
+  font-size: 6.5px;
+  line-height: 1.35;
+
+  text-align: center;
+
+  white-space: normal;
+}
+
+
+/* =========================================
+   CENTER
+========================================= */
+
+.bridge-middle {
+  position: static;
+
+  width: 44px;
+  min-width: 0;
+  max-width: 44px;
+
+  margin: 0;
+  padding: 0;
+
+  transform: none;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  text-align: center;
+}
+
+
+/* LINE */
+
+.bridge-line {
+  position: relative;
+
+  width: 32px;
+  max-width: 32px;
+  height: 2px;
+
+  margin: 0 auto 7px;
+
+  transform: none;
+}
+
+
+/* ACTIVATION */
+
+.bridge-middle > small {
+  display: block;
+
+  margin: 0;
+
+  font-size: 4.8px;
+  font-weight: 700;
+  line-height: 1;
+
+  letter-spacing: 0;
+
+  text-transform: uppercase;
+
+  white-space: nowrap;
+}
+
+
+/* PULSE */
+
+.bridge-pulse {
+  top: 50%;
+
+  transform: translateY(-50%);
+}
+.customer-flow-card {
+  width: 100%;
+  min-width: 0;
+  max-width: 100%;
+
+  box-sizing: border-box;
+
+  margin-left: 0;
+  margin-right: 0;
+
+  transform: none;
+}
+
+.about-visual {
+  width: 100%;
+  min-width: 0;
+  max-width: 100%;
+
+  box-sizing: border-box;
+}
+/* =========================================
+   FROM IDEAS → IMPACT
+   KEEP ALL 5 STEPS IN ONE LINE
+========================================= */
+
+.impact-card {
+  width: 100%;
+  min-width: 0;
+  max-width: 100%;
+
+  box-sizing: border-box;
+
+  padding: 14px 10px;
+  overflow: hidden;
+}
+
+
+/* HEADING */
+
+.impact-heading {
+  margin-bottom: 14px;
+}
+
+.impact-heading span {
+  font-size: 8px;
+}
+
+.impact-heading h3 {
+  font-size: 16px;
+  line-height: 1.1;
+}
+
+
+/* =========================================
+   5-STEP TRACK
+========================================= */
+
+.impact-track {
+  width: 100%;
+  min-width: 0;
+
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+
+  gap: 0;
+
+  margin: 0;
+  padding: 0;
+}
+
+
+/* EACH STEP */
+
+.impact-step {
+  flex: 0 1 48px;
   min-width: 0;
 
   display: flex;
@@ -5678,73 +5902,107 @@ svg {
   text-align: center;
 }
 
-.data-flow-copy strong {
-  display: block;
-  margin: 0;
 
-  color: #ffffff;
+/* NUMBER CIRCLE */
 
-  font-size: 10px;
-  font-weight: 700;
-  line-height: 1.3;
+.impact-step b {
+  display: flex;
+  align-items: center;
+  justify-content: center;
 
-  white-space: nowrap;
-}
+  width: 22px;
+  height: 22px;
 
-.data-flow-copy span {
-  display: block;
-
-  max-width: 90px;
-  margin-top: 3px;
-
-  color: #62a8d5;
+  margin: 0 auto 5px;
 
   font-size: 8px;
-  font-weight: 400;
-  line-height: 1.4;
-
-  text-align: center;
-}
-
-/* CENTER ACTIVATION */
-
-.data-flow-center {
-  width: 100%;
-
-  align-self: center;
-
-  text-align: center;
-}
-
-.activation-line {
-  width: 46px;
-  max-width: 100%;
-  height: 2px;
-
-  margin: 0 auto 7px;
-
-  border-radius: 10px;
-
-  background: linear-gradient(
-    90deg,
-    #4055a5,
-    #1689af
-  );
-}
-
-.data-flow-center span {
-  display: block;
-
-  color: #5db9ed;
-
-  font-size: 6px;
-  font-weight: 700;
   line-height: 1;
 
-  letter-spacing: 0.07em;
-  text-transform: uppercase;
+  border-radius: 50%;
+}
+
+
+/* DISCOVER / DESIGN / BUILD ETC. */
+
+.impact-step span {
+  display: block;
+
+  width: 100%;
+
+  font-size: 7px;
+  font-weight: 700;
+  line-height: 1.15;
 
   white-space: nowrap;
+}
+
+
+/* REQUIREMENTS / SOLUTION ETC. */
+
+.impact-step small {
+  display: block;
+
+  width: 100%;
+
+  margin-top: 3px;
+
+  font-size: 5.5px;
+  line-height: 1.2;
+
+  white-space: normal;
+}
+
+
+/* =========================================
+   CONNECTOR BETWEEN STEPS
+========================================= */
+
+.impact-track > i {
+  flex: 1 1 auto;
+
+  min-width: 5px;
+  max-width: 14px;
+
+  height: 1px;
+
+  margin: 11px 2px 0;
+
+  align-self: flex-start;
+}
+
+
+/* =========================================
+   BOTTOM MESSAGE
+========================================= */
+
+.impact-message {
+  width: 100%;
+  box-sizing: border-box;
+
+  margin-top: 14px;
+  padding: 8px 9px;
+
+  gap: 6px;
+}
+
+
+/* MESSAGE DOT */
+
+.impact-message-dot {
+  flex: 0 0 auto;
+
+  width: 6px;
+  height: 6px;
+}
+
+
+/* MESSAGE TEXT */
+
+.impact-message p {
+  margin: 0;
+
+  font-size: 7px;
+  line-height: 1.35;
 }
 }
 

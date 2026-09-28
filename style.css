@@ -5990,7 +5990,7 @@ svg {
 
 .impact-message-dot {
   flex: 0 0 auto;
-
+margin-top: 1px;
   width: 6px;
   height: 6px;
 }

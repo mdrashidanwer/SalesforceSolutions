@@ -925,23 +925,6 @@ svg {
     border-radius: 20px;
   }
 
-  .journey-flow {
-    display: grid;
-
-    grid-template-columns:
-      repeat(5, 1fr);
-
-    gap: 7px;
-
-    padding:
-      28px 10px
-      25px;
-  }
-
-  .journey-node {
-    width: auto;
-  }
-
   .node-icon {
     width: 39px;
     height: 39px;
@@ -961,20 +944,6 @@ svg {
     font-size: 7px;
   }
 
-  .journey-connector {
-    display: none;
-  }
-
-  .journey-data-layer {
-    margin:
-      0 14px
-      14px;
-  }
-
-  .journey-footer {
-    padding:
-      12px 15px;
-  }
 }
 
 

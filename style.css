@@ -6093,8 +6093,9 @@ svg {
   .hero-visual {
     transform: none;
     min-height: auto;
-    margin-top: 34px;
-    margin-bottom: 0
+    margin-top: 0px;
+    margin-bottom: 0;
+    padding-top: 0;
   }
 
   .journey-flow {

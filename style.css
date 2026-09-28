@@ -6233,7 +6233,7 @@ svg {
 
   .journey-flow {
     grid-template-columns: 1fr;
-    gap: 10px
+    gap: 7px
   }
 
   .j-line {

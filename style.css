@@ -3928,6 +3928,101 @@ svg {
   }
 
 
+  .impact-step {
+    flex: none;
+
+    width: 100%;
+
+    min-height: 58px;
+
+    flex-direction: row;
+
+    text-align: left;
+  }
+
+
+  .impact-step b {
+    flex: 0 0 40px;
+
+    width: 40px;
+    height: 40px;
+
+    border-radius: 12px;
+  }
+
+
+  .impact-step > span {
+    margin:
+      4px 0 0
+      13px;
+
+    font-size: 11px;
+  }
+
+
+  .impact-step small {
+    position: absolute;
+
+    left: 53px;
+    top: 24px;
+
+    margin: 0;
+
+    font-size: 8px;
+  }
+
+
+  /* vertical connector */
+
+  .impact-track > i {
+    flex: none;
+
+    width: 2px;
+    height: 22px;
+
+    min-width: 2px;
+
+    margin:
+      -12px 0 4px
+      19px;
+
+    background:
+      linear-gradient(
+        180deg,
+        rgba(32, 190, 242, 0.20),
+        rgba(84, 116, 234, 0.25)
+      );
+  }
+
+
+  .impact-track > i::after {
+    top: -6px;
+    left: -2px;
+
+    animation:
+      impactFlowMobile 2.4s linear infinite;
+  }
+
+
+  .impact-message {
+    padding: 15px;
+  }
+
+}
+
+
+@keyframes impactFlowMobile {
+
+  from {
+    top: -6px;
+  }
+
+  to {
+    top: 100%;
+  }
+}
+
+
 /* =========================================
    REDUCED MOTION
 ========================================= */

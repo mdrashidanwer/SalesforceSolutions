@@ -3928,61 +3928,6 @@ svg {
   }
 
 
-  .impact-track {
-    flex-direction: column;
-
-    align-items: stretch;
-
-    gap: 0;
-
-    margin-bottom: 26px;
-  }
-
-
-  .impact-step {
-    flex: none;
-
-    width: 100%;
-
-    min-height: 58px;
-
-    flex-direction: row;
-
-    text-align: left;
-  }
-
-
-  .impact-step b {
-    flex: 0 0 40px;
-
-    width: 40px;
-    height: 40px;
-
-    border-radius: 12px;
-  }
-
-
-  .impact-step > span {
-    margin:
-      4px 0 0
-      13px;
-
-    font-size: 11px;
-  }
-
-
-  .impact-step small {
-    position: absolute;
-
-    left: 53px;
-    top: 24px;
-
-    margin: 0;
-
-    font-size: 8px;
-  }
-
-
   /* vertical connector */
 
   .impact-track > i {

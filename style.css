@@ -6239,12 +6239,6 @@ svg {
     gap: 12px
   }
 
-  .impact-track i {
-    width: 2px;
-    height: 26px;
-    margin: auto
-  }
-
   .contact-actions {
     flex-direction: column
   }

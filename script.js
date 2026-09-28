@@ -1,373 +1,768 @@
-const navToggle=document.getElementById("navToggle");
-const mainNav=document.getElementById("mainNav");
-const cursorGlow=document.getElementById("cursorGlow");
-const heroVisual=document.getElementById("heroVisual");
-const journeyWindow=heroVisual?.querySelector(".journey-window");
+/* =========================================================
+   PORTFOLIO WEBSITE
+   MAIN JAVASCRIPT
+========================================================= */
 
-navToggle?.addEventListener("click",()=>{const open=mainNav.classList.toggle("open");navToggle.setAttribute("aria-expanded",String(open));});
-mainNav?.querySelectorAll("a").forEach(a=>a.addEventListener("click",()=>{mainNav.classList.remove("open");navToggle.setAttribute("aria-expanded","false");}));
 
-const observer=new IntersectionObserver(entries=>entries.forEach(entry=>{if(entry.isIntersecting){entry.target.classList.add("visible");observer.unobserve(entry.target);}}),{threshold:.12});
-document.querySelectorAll(".reveal").forEach(el=>observer.observe(el));
+/* =========================================================
+   ELEMENT REFERENCES
+========================================================= */
 
-document.addEventListener("mousemove",e=>{if(!cursorGlow)return;cursorGlow.style.left=e.clientX+"px";cursorGlow.style.top=e.clientY+"px";});
+const navToggle = document.getElementById("navToggle");
+const mainNav = document.getElementById("mainNav");
+const cursorGlow = document.getElementById("cursorGlow");
+const heroVisual = document.getElementById("heroVisual");
 
-if(heroVisual&&journeyWindow&&window.matchMedia("(pointer:fine)").matches){
-  heroVisual.addEventListener("mousemove",e=>{
-    const r=heroVisual.getBoundingClientRect(),x=(e.clientX-r.left)/r.width,y=(e.clientY-r.top)/r.height;
-    journeyWindow.style.transform=`perspective(1000px) rotateX(${(0.5-y)*5}deg) rotateY(${(x-0.5)*6}deg)`;
-  });
-  heroVisual.addEventListener("mouseleave",()=>journeyWindow.style.transform="");
-}
+const journeyWindow =
+  heroVisual?.querySelector(".journey-window");
 
-document.querySelectorAll(".tilt").forEach(card=>{
-  if(!window.matchMedia("(pointer:fine)").matches)return;
-  card.addEventListener("mousemove",e=>{
-    const r=card.getBoundingClientRect(),x=(e.clientX-r.left)/r.width,y=(e.clientY-r.top)/r.height;
-    card.style.transform=`perspective(700px) rotateX(${(0.5-y)*5}deg) rotateY(${(x-0.5)*5}deg) translateY(-4px)`;
-  });
-  card.addEventListener("mouseleave",()=>card.style.transform="");
+
+/* =========================================================
+   MOBILE NAVIGATION
+========================================================= */
+
+navToggle?.addEventListener("click", () => {
+
+  const open =
+    mainNav?.classList.toggle("open");
+
+  navToggle.setAttribute(
+    "aria-expanded",
+    String(open)
+  );
+
 });
 
-/* ========================================
-   HERO CODE TABS
-======================================== */
 
-const codeTabs = document.querySelectorAll(".code-tab");
-const codeContents = document.querySelectorAll(".code-content");
+mainNav
+  ?.querySelectorAll("a")
+  .forEach((link) => {
+
+    link.addEventListener("click", () => {
+
+      mainNav.classList.remove("open");
+
+      navToggle?.setAttribute(
+        "aria-expanded",
+        "false"
+      );
+
+    });
+
+  });
+
+
+/* =========================================================
+   SCROLL REVEAL ANIMATION
+========================================================= */
+
+const revealElements =
+  document.querySelectorAll(".reveal");
+
+
+if ("IntersectionObserver" in window) {
+
+  const observer =
+    new IntersectionObserver(
+      (entries) => {
+
+        entries.forEach((entry) => {
+
+          if (entry.isIntersecting) {
+
+            entry.target.classList.add(
+              "visible"
+            );
+
+            observer.unobserve(
+              entry.target
+            );
+
+          }
+
+        });
+
+      },
+      {
+        threshold: 0.12
+      }
+    );
+
+
+  revealElements.forEach((element) => {
+    observer.observe(element);
+  });
+
+} else {
+
+  /* Fallback for browsers without
+     IntersectionObserver support */
+
+  revealElements.forEach((element) => {
+    element.classList.add("visible");
+  });
+
+}
+
+
+/* =========================================================
+   CURSOR GLOW
+   Desktop / fine pointer devices only
+========================================================= */
+
+if (
+  cursorGlow &&
+  window.matchMedia("(pointer: fine)").matches
+) {
+
+  document.addEventListener(
+    "mousemove",
+    (event) => {
+
+      cursorGlow.style.left =
+        `${event.clientX}px`;
+
+      cursorGlow.style.top =
+        `${event.clientY}px`;
+
+    }
+  );
+
+}
+
+
+/* =========================================================
+   HERO 3D MOVEMENT
+========================================================= */
+
+if (
+  heroVisual &&
+  journeyWindow &&
+  window.matchMedia("(pointer: fine)").matches
+) {
+
+  heroVisual.addEventListener(
+    "mousemove",
+    (event) => {
+
+      const rect =
+        heroVisual.getBoundingClientRect();
+
+      const x =
+        (event.clientX - rect.left) /
+        rect.width;
+
+      const y =
+        (event.clientY - rect.top) /
+        rect.height;
+
+
+      const rotateX =
+        (0.5 - y) * 5;
+
+      const rotateY =
+        (x - 0.5) * 6;
+
+
+      journeyWindow.style.transform =
+        `perspective(1000px)
+         rotateX(${rotateX}deg)
+         rotateY(${rotateY}deg)`;
+
+    }
+  );
+
+
+  heroVisual.addEventListener(
+    "mouseleave",
+    () => {
+
+      journeyWindow.style.transform = "";
+
+    }
+  );
+
+}
+
+
+/* =========================================================
+   TILT CARDS
+========================================================= */
+
+if (
+  window.matchMedia("(pointer: fine)").matches
+) {
+
+  document
+    .querySelectorAll(".tilt")
+    .forEach((card) => {
+
+      card.addEventListener(
+        "mousemove",
+        (event) => {
+
+          const rect =
+            card.getBoundingClientRect();
+
+          const x =
+            (event.clientX - rect.left) /
+            rect.width;
+
+          const y =
+            (event.clientY - rect.top) /
+            rect.height;
+
+
+          const rotateX =
+            (0.5 - y) * 5;
+
+          const rotateY =
+            (x - 0.5) * 5;
+
+
+          card.style.transform =
+            `perspective(700px)
+             rotateX(${rotateX}deg)
+             rotateY(${rotateY}deg)
+             translateY(-4px)`;
+
+        }
+      );
+
+
+      card.addEventListener(
+        "mouseleave",
+        () => {
+
+          card.style.transform = "";
+
+        }
+      );
+
+    });
+
+}
+
+
+/* =========================================================
+   HERO CODE TABS
+   AMPscript / SQL
+========================================================= */
+
+const codeTabs =
+  document.querySelectorAll(".code-tab");
+
+const codeContents =
+  document.querySelectorAll(".code-content");
+
 
 codeTabs.forEach((tab) => {
 
   tab.addEventListener("click", () => {
 
-    const target = tab.dataset.code;
+    const target =
+      tab.dataset.code;
+
+
+    /* Remove current active states */
 
     codeTabs.forEach((item) => {
       item.classList.remove("active");
     });
 
+
     codeContents.forEach((content) => {
       content.classList.remove("active");
     });
 
+
+    /* Activate selected tab */
+
     tab.classList.add("active");
+
 
     const targetContent =
       document.getElementById(target);
 
+
     if (targetContent) {
-      targetContent.classList.add("active");
+
+      targetContent.classList.add(
+        "active"
+      );
+
     }
 
   });
 
 });
 
-/* =========================================
+
+/* =========================================================
    TESTIMONIAL CAROUSEL
-========================================= */
+========================================================= */
 
-document.addEventListener("DOMContentLoaded", () => {
+document.addEventListener(
+  "DOMContentLoaded",
+  () => {
 
-  const carousel = document.querySelector(".testimonial-carousel");
-  const track = document.querySelector(".testimonial-track");
-  const cards = document.querySelectorAll(".testimonial-card");
+    const carousel =
+      document.querySelector(
+        ".testimonial-carousel"
+      );
 
-  const prevButton = document.querySelector(".testimonial-prev");
-  const nextButton = document.querySelector(".testimonial-next");
+    const track =
+      document.querySelector(
+        ".testimonial-track"
+      );
 
-  const dotsContainer = document.querySelector(".testimonial-dots");
+    const cards =
+      document.querySelectorAll(
+        ".testimonial-card"
+      );
 
-  if (
-    !carousel ||
-    !track ||
-    !cards.length ||
-    !dotsContainer
-  ) {
-    return;
-  }
+    const prevButton =
+      document.querySelector(
+        ".testimonial-prev"
+      );
 
+    const nextButton =
+      document.querySelector(
+        ".testimonial-next"
+      );
 
-  let currentIndex = 0;
-  let touchStartX = 0;
-  let touchEndX = 0;
-
-
-  /* -----------------------------------------
-     Visible cards
-  ----------------------------------------- */
-
-  function getVisibleCards() {
-
-    if (window.innerWidth <= 650) {
-      return 1;
-    }
-
-    if (window.innerWidth <= 950) {
-      return 2;
-    }
-
-    return 3;
-  }
+    const dotsContainer =
+      document.querySelector(
+        ".testimonial-dots"
+      );
 
 
-  /* -----------------------------------------
-     Maximum slide index
-  ----------------------------------------- */
+    /* Stop if carousel doesn't exist */
 
-  function getMaxIndex() {
-
-    return Math.max(
-      0,
-      cards.length - getVisibleCards()
-    );
-
-  }
-
-
-  /* -----------------------------------------
-     Create dots
-  ----------------------------------------- */
-
-  function createDots() {
-
-    dotsContainer.innerHTML = "";
-
-    const totalPositions =
-      getMaxIndex() + 1;
-
-    for (
-      let i = 0;
-      i < totalPositions;
-      i++
+    if (
+      !carousel ||
+      !track ||
+      !cards.length ||
+      !dotsContainer
     ) {
+      return;
+    }
 
-      const dot =
-        document.createElement("button");
 
-      dot.classList.add(
-        "testimonial-dot"
-      );
+    let currentIndex = 0;
 
-      dot.setAttribute(
-        "aria-label",
-        `Go to testimonial ${i + 1}`
-      );
+    let touchStartX = 0;
+    let touchEndX = 0;
 
-      dot.addEventListener(
-        "click",
-        () => {
 
-          currentIndex = i;
-          updateCarousel();
+    /* -----------------------------------------------------
+       NUMBER OF VISIBLE CARDS
+    ----------------------------------------------------- */
 
-        }
-      );
+    function getVisibleCards() {
 
-      dotsContainer.appendChild(dot);
+      if (window.innerWidth <= 650) {
+        return 1;
+      }
+
+
+      if (window.innerWidth <= 950) {
+        return 2;
+      }
+
+
+      return 3;
 
     }
 
-  }
 
+    /* -----------------------------------------------------
+       MAXIMUM SLIDE INDEX
+    ----------------------------------------------------- */
 
-  /* -----------------------------------------
-     Move carousel
-  ----------------------------------------- */
+    function getMaxIndex() {
 
-  function updateCarousel() {
-
-    const firstCard = cards[0];
-
-    const trackStyles =
-      window.getComputedStyle(track);
-
-    const gap =
-      parseFloat(trackStyles.gap) || 0;
-
-    const cardWidth =
-      firstCard.getBoundingClientRect().width;
-
-    const moveAmount =
-      (cardWidth + gap) * currentIndex;
-
-    track.style.transform =
-      `translateX(-${moveAmount}px)`;
-
-
-    const dots =
-      dotsContainer.querySelectorAll(
-        ".testimonial-dot"
+      return Math.max(
+        0,
+        cards.length -
+        getVisibleCards()
       );
 
-    dots.forEach(
-      (dot, index) => {
+    }
 
-        dot.classList.toggle(
-          "active",
-          index === currentIndex
+
+    /* -----------------------------------------------------
+       CREATE CAROUSEL DOTS
+    ----------------------------------------------------- */
+
+    function createDots() {
+
+      dotsContainer.innerHTML = "";
+
+
+      const totalPositions =
+        getMaxIndex() + 1;
+
+
+      for (
+        let i = 0;
+        i < totalPositions;
+        i++
+      ) {
+
+        const dot =
+          document.createElement(
+            "button"
+          );
+
+
+        dot.classList.add(
+          "testimonial-dot"
         );
 
+
+        dot.setAttribute(
+          "type",
+          "button"
+        );
+
+
+        dot.setAttribute(
+          "aria-label",
+          `Go to testimonial ${i + 1}`
+        );
+
+
+        dot.addEventListener(
+          "click",
+          () => {
+
+            currentIndex = i;
+
+            updateCarousel();
+
+          }
+        );
+
+
+        dotsContainer.appendChild(dot);
+
       }
-    );
 
-  }
-
-
-  /* -----------------------------------------
-     Next
-  ----------------------------------------- */
-
-  function nextSlide() {
-
-    const maxIndex =
-      getMaxIndex();
-
-    currentIndex =
-      currentIndex >= maxIndex
-        ? 0
-        : currentIndex + 1;
-
-    updateCarousel();
-
-  }
+    }
 
 
-  /* -----------------------------------------
-     Previous
-  ----------------------------------------- */
+    /* -----------------------------------------------------
+       UPDATE CAROUSEL POSITION
+    ----------------------------------------------------- */
 
-  function previousSlide() {
+    function updateCarousel() {
 
-    const maxIndex =
-      getMaxIndex();
-
-    currentIndex =
-      currentIndex <= 0
-        ? maxIndex
-        : currentIndex - 1;
-
-    updateCarousel();
-
-  }
+      const firstCard =
+        cards[0];
 
 
-  if (nextButton) {
-
-    nextButton.addEventListener(
-      "click",
-      nextSlide
-    );
-
-  }
-
-
-  if (prevButton) {
-
-    prevButton.addEventListener(
-      "click",
-      previousSlide
-    );
-
-  }
-
-
-  /* -----------------------------------------
-     Mobile swipe
-  ----------------------------------------- */
-
-  carousel.addEventListener(
-    "touchstart",
-    (event) => {
-
-      touchStartX =
-        event.changedTouches[0].screenX;
-
-    },
-    { passive: true }
-  );
-
-
-  carousel.addEventListener(
-    "touchend",
-    (event) => {
-
-      touchEndX =
-        event.changedTouches[0].screenX;
-
-      const difference =
-        touchStartX - touchEndX;
-
-
-      if (Math.abs(difference) < 45) {
+      if (!firstCard) {
         return;
       }
 
 
-      if (difference > 0) {
-        nextSlide();
-      } else {
-        previousSlide();
-      }
-
-    },
-    { passive: true }
-  );
+      const trackStyles =
+        window.getComputedStyle(track);
 
 
-  /* -----------------------------------------
-     Resize
-  ----------------------------------------- */
+      const gap =
+        parseFloat(
+          trackStyles.columnGap ||
+          trackStyles.gap
+        ) || 0;
 
-  let resizeTimer;
 
-  window.addEventListener(
-    "resize",
-    () => {
+      const cardWidth =
+        firstCard
+          .getBoundingClientRect()
+          .width;
 
-      clearTimeout(resizeTimer);
 
-      resizeTimer =
-        setTimeout(() => {
+      const moveAmount =
+        (cardWidth + gap) *
+        currentIndex;
 
-          const maxIndex =
-            getMaxIndex();
 
-          if (currentIndex > maxIndex) {
-            currentIndex = maxIndex;
-          }
+      track.style.transform =
+        `translateX(-${moveAmount}px)`;
 
-          createDots();
-          updateCarousel();
 
-        }, 150);
+      /* Update active dot */
+
+      const dots =
+        dotsContainer.querySelectorAll(
+          ".testimonial-dot"
+        );
+
+
+      dots.forEach(
+        (dot, index) => {
+
+          dot.classList.toggle(
+            "active",
+            index === currentIndex
+          );
+
+        }
+      );
 
     }
+
+
+    /* -----------------------------------------------------
+       NEXT SLIDE
+    ----------------------------------------------------- */
+
+    function nextSlide() {
+
+      const maxIndex =
+        getMaxIndex();
+
+
+      currentIndex =
+        currentIndex >= maxIndex
+          ? 0
+          : currentIndex + 1;
+
+
+      updateCarousel();
+
+    }
+
+
+    /* -----------------------------------------------------
+       PREVIOUS SLIDE
+    ----------------------------------------------------- */
+
+    function previousSlide() {
+
+      const maxIndex =
+        getMaxIndex();
+
+
+      currentIndex =
+        currentIndex <= 0
+          ? maxIndex
+          : currentIndex - 1;
+
+
+      updateCarousel();
+
+    }
+
+
+    /* -----------------------------------------------------
+       BUTTON CONTROLS
+    ----------------------------------------------------- */
+
+    nextButton?.addEventListener(
+      "click",
+      nextSlide
+    );
+
+
+    prevButton?.addEventListener(
+      "click",
+      previousSlide
+    );
+
+
+    /* -----------------------------------------------------
+       MOBILE SWIPE
+    ----------------------------------------------------- */
+
+    carousel.addEventListener(
+      "touchstart",
+      (event) => {
+
+        touchStartX =
+          event.changedTouches[0]
+            .screenX;
+
+      },
+      {
+        passive: true
+      }
+    );
+
+
+    carousel.addEventListener(
+      "touchend",
+      (event) => {
+
+        touchEndX =
+          event.changedTouches[0]
+            .screenX;
+
+
+        const difference =
+          touchStartX -
+          touchEndX;
+
+
+        /* Ignore very small swipes */
+
+        if (
+          Math.abs(difference) < 45
+        ) {
+          return;
+        }
+
+
+        if (difference > 0) {
+
+          nextSlide();
+
+        } else {
+
+          previousSlide();
+
+        }
+
+      },
+      {
+        passive: true
+      }
+    );
+
+
+    /* -----------------------------------------------------
+       WINDOW RESIZE
+    ----------------------------------------------------- */
+
+    let resizeTimer;
+
+
+    window.addEventListener(
+      "resize",
+      () => {
+
+        clearTimeout(
+          resizeTimer
+        );
+
+
+        resizeTimer =
+          setTimeout(
+            () => {
+
+              const maxIndex =
+                getMaxIndex();
+
+
+              if (
+                currentIndex >
+                maxIndex
+              ) {
+
+                currentIndex =
+                  maxIndex;
+
+              }
+
+
+              createDots();
+              updateCarousel();
+
+            },
+            150
+          );
+
+      }
+    );
+
+
+    /* -----------------------------------------------------
+       INITIALIZE CAROUSEL
+    ----------------------------------------------------- */
+
+    createDots();
+    updateCarousel();
+
+  }
+);
+
+
+/* =========================================================
+   AUTOMATIC FOOTER YEAR
+========================================================= */
+
+const currentYear =
+  document.getElementById(
+    "currentYear"
   );
 
 
-  /* Initial setup */
-
-  createDots();
-  updateCarousel();
-
-});
-
-/* Footer year */
-
-const currentYear =
-  document.getElementById("currentYear");
-
 if (currentYear) {
+
   currentYear.textContent =
     new Date().getFullYear();
+
 }
 
-/* Deterrents only — not real source protection. Browser-delivered HTML/CSS/JS can always be inspected. 
-document.addEventListener("contextmenu",e=>e.preventDefault());
-document.addEventListener("keydown",e=>{
-  const k=e.key.toLowerCase();
-  if(e.key==="F12" || (e.ctrlKey&&e.shiftKey&&["i","j","c"].includes(k)) || (e.ctrlKey&&k==="u")){
-    e.preventDefault();
+
+/* =========================================================
+   BASIC SOURCE-INSPECTION DETERRENTS
+
+   IMPORTANT:
+   These only discourage casual inspection.
+   Client-side HTML, CSS and JavaScript cannot be
+   genuinely hidden from someone who receives the page.
+========================================================= */
+
+
+/* Disable right-click */
+
+document.addEventListener(
+  "contextmenu",
+  (event) => {
+
+    event.preventDefault();
+
   }
-}); */
+);
+
+
+/* Block common inspection shortcuts */
+
+document.addEventListener(
+  "keydown",
+  (event) => {
+
+    const key =
+      event.key.toLowerCase();
+
+
+    const isF12 =
+      event.key === "F12";
+
+
+    const isDevToolsShortcut =
+      event.ctrlKey &&
+      event.shiftKey &&
+      ["i", "j", "c"].includes(key);
+
+
+    const isViewSourceShortcut =
+      event.ctrlKey &&
+      key === "u";
+
+
+    if (
+      isF12 ||
+      isDevToolsShortcut ||
+      isViewSourceShortcut
+    ) {
+
+      event.preventDefault();
+
+    }
+
+  }
+);

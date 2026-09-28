@@ -3927,42 +3927,6 @@ svg {
     margin-bottom: 28px;
   }
 
-
-  .impact-step b {
-    flex: 0 0 40px;
-
-    width: 40px;
-    height: 40px;
-
-    border-radius: 12px;
-  }
-
-
-  .impact-step > span {
-    margin:
-      4px 0 0
-      13px;
-
-    font-size: 11px;
-  }
-
-
-  .impact-step small {
-    position: absolute;
-
-    left: 53px;
-    top: 24px;
-
-    margin: 0;
-
-    font-size: 8px;
-  }
-
-
-  .impact-message {
-    padding: 15px;
-  }
-
 }
 
 
